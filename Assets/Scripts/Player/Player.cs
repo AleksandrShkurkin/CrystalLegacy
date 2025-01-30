@@ -11,7 +11,7 @@ public class Player : LivingEntity
     
     public override void RecieveDamage(int damage)
     {
-        health -= Mathf.RoundToInt(damage - (damage / defense));
+        health -= Mathf.RoundToInt(damage / defense);
         //TODO: Implement death 
         if (health <= 0)
         {
