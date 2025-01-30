@@ -8,15 +8,12 @@ public class EnemyMoveFollow : MonoBehaviour
     public float moveSpeed = 2f;
     private Vector2 movement;
     private Transform player;
-    public GameObject aggresionTrigger;
-    private Collider2D aggresionCollider;
-    private bool isAggresive = false;
+    protected bool isAggresive = false;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponentInParent<Enemy>().GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        aggresionCollider = aggresionTrigger.GetComponent<Collider2D>();
     }
 
     void Update()
@@ -34,12 +31,25 @@ public class EnemyMoveFollow : MonoBehaviour
         if (isAggresive)
         {
             MoveCharacter(movement);
+            RotateCharacter(movement);
         }
     }
 
     void MoveCharacter(Vector2 direction)
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));
+        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
+    }
+
+    void RotateCharacter(Vector2 movement)
+    {
+        if (Mathf.Abs(movement.x) >= Mathf.Abs(movement.y))
+        {
+            rb.transform.rotation = Quaternion.Euler(0, 0, movement.x > 0 ? 0 : 180);
+        }
+        else
+        {
+            rb.transform.rotation = Quaternion.Euler(0, 0, movement.y > 0 ? 90 : -90);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

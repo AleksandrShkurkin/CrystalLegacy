@@ -10,7 +10,7 @@ public class Enemy : LivingEntity
     {
         health = 100;
         defense = 1.0f;
-        attackDamage = 0;
+        attackDamage = 10;
     }
 
     void Update()
