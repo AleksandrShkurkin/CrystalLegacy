@@ -2,38 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponSword : Weapon
+public class WeaponSword : WeaponMelee
 {
     void Start()
     {
         weaponName = "Sword";
-        damage = 10;
-        attackCooldown = 0.5f;
-        attackDuration = 0.5f;
-        canAttack = true;
+        damageWeapon = 10;
+        colliderActiveTime = 0.5f;
         hitbox = gameObject;
     }
 
-    public override IEnumerator Attack()
+    public override IEnumerator Attack(int playerDamage)
     {
-        canAttack = false;
         hitbox.GetComponent<Collider2D>().enabled = true;
 
-        yield return new WaitForSeconds(attackDuration/2);
+        yield return new WaitForSeconds(colliderActiveTime/2);
 
         Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(hitbox.transform.position, hitbox.GetComponent<BoxCollider2D>().size, 0f, LayerMask.GetMask("Enemy"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().RecieveDamage(damage);
+            enemy.GetComponent<Enemy>().RecieveDamage(damageWeapon + playerDamage);
         }
 
-        yield return new WaitForSeconds(attackDuration/2);
+        yield return new WaitForSeconds(colliderActiveTime/2);
 
         hitbox.GetComponent<Collider2D>().enabled = false;
-
-        yield return new WaitForSeconds(attackCooldown);
-
-        canAttack = true;
     }
 
     /* Damage at the start and the end of the attack
