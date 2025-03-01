@@ -58,7 +58,7 @@ public class Player : LivingEntity
         {
             AchievementManager.Instance.UnlockAchievement("First Blood");
         }
-        if (killCount == 1)
+        if (killCount == 5)
         {
             AchievementManager.Instance.UnlockAchievement("Moral superiority");
             GameObject comp = Instantiate(companion, transform.position + (Vector3)(Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
