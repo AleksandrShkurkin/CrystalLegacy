@@ -153,23 +153,26 @@ public class EnemyMoveFollow : MonoBehaviour
         }
     }
 
-    Vector2 FindAlternativePath(Vector2 originalDirection)
-    {
-        Vector2[] possibleDirections = {
-            new Vector2(-originalDirection.y, originalDirection.x), // Left
-            new Vector2(originalDirection.y, -originalDirection.x), // Right
-            -originalDirection // Backward
-        };
 
-        foreach (Vector2 dir in possibleDirections)
-        {
-            if (!Physics2D.Raycast(transform.position, dir, detectionRange, obstacleMask))
-            {
-                Debug.DrawRay(transform.position, dir * detectionRange, Color.green);
-                return dir;
-            }
-        }
+  Vector2 FindAlternativePath(Vector2 targetDirection) {
+    float k1 = 0.5f, k2 = 1.3f; // magik
+    bool clockwise = true;
 
-        return Vector2.zero; // No available paths, stop moving
+    bool firstQ = targetDirection.y >= 0 && targetDirection.x >= 0,
+         secondQ = targetDirection.y > 0 && targetDirection.x < 0,
+         thirdQ = targetDirection.y < 0 && targetDirection.x < 0,
+         fourthQ = targetDirection.y <= 0 && targetDirection.x >= 0;
+
+    Vector2 dir = targetDirection;
+      dir.x = targetDirection.y * -k2;
+      dir.y = targetDirection.x * k1;
+
+    dir.Normalize();
+    if (!Physics2D.Raycast(transform.position, dir, detectionRange,
+                           obstacleMask)) {
+      Debug.DrawRay(transform.position, dir * detectionRange, Color.green);
+      return dir;
     }
+    return dir;
+  }
 }
