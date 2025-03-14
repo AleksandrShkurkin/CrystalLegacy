@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 114
+  controlID: 95
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 56
+  controlID: 51
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 45
+  controlID: 40
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -320,8 +320,8 @@ MonoBehaviour:
   currentStatusEntriesHasUpdate: 0
   repositoryProgressHasUpdate: 0
   appManagerProgressHasUpdate: 0
-  changeTab: 5
-  activeTab: 5
+  changeTab: 4
+  activeTab: 4
   initProjectView:
     hasCompletedInitialCheck: 0
     isUserDataPresent: 0
@@ -441,6 +441,36 @@ MonoBehaviour:
         isActive: 0
         treeIsCheckable: 0
         checkState: 0
+      - path: origin/master
+        label: master
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/Nasya
+        label: Nasya
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/OleksandrSh
+        label: OleksandrSh
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
       - path: origin/Sandra
         label: Sandra
         level: 2
@@ -468,17 +498,17 @@ MonoBehaviour:
     disableDelete: 1
     disableCreate: 1
     lastLocalAndRemoteBranchListChangedEvent:
-      updatedTimeString: 2025-03-01T18:36:18.509+02:00
+      updatedTimeString: 2025-03-07T08:55:48.554+02:00
       cacheType: 2
     lastCurrentBranchAndRemoteChange:
-      updatedTimeString: 2025-03-01T18:34:56.550+02:00
+      updatedTimeString: 2025-03-07T08:55:47.771+02:00
       cacheType: 1
     currentBranch:
       name: Sandra
       tracking: 
     currentRemote:
       name: origin
-      url: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+      url: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
       login: 
       user: 
       host: 
@@ -488,6 +518,12 @@ MonoBehaviour:
     - name: Sandra
       tracking: 
     remoteBranches:
+    - name: origin/master
+      tracking: '[None]'
+    - name: origin/Nasya
+      tracking: '[None]'
+    - name: origin/OleksandrSh
+      tracking: '[None]'
     - name: origin/Sandra
       tracking: '[None]'
   changesView:
@@ -1444,11 +1480,11 @@ MonoBehaviour:
       installSettingsHidden: 0
     hasRemote: 1
     lastCurrentRemoteChangedEvent:
-      updatedTimeString: 2025-03-01T18:34:56.550+02:00
+      updatedTimeString: 2025-03-01T21:35:47.606+02:00
       cacheType: 1
-    newRepositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    newRepositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
     repositoryRemoteName: origin
-    repositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    repositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
     scroll: {x: 0, y: 0}
     userSettingsView:
       gitName: AlexandraBalinskaiya
@@ -1457,7 +1493,7 @@ MonoBehaviour:
       newGitEmail: sashabalins@gmail.com
       needsSaving: 0
       lastCheckUserChangedEvent:
-        updatedTimeString: 2025-03-01T18:35:41.822+02:00
+        updatedTimeString: 2025-03-01T18:57:00.995+02:00
         cacheType: 8
       configSettingsHidden: 0
     repositorySettingsHidden: 0
@@ -1512,7 +1548,7 @@ MonoBehaviour:
   hasRemote: 1
   currentRemoteName: origin
   currentBranch: Sandra
-  currentRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+  currentRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
   statusAhead: 0
   statusBehind: 0
   hasItemsToCommit: 1
@@ -1522,17 +1558,17 @@ MonoBehaviour:
     m_Image: {fileID: 0}
     m_Tooltip: Active branch
   currentRemoteUrlContent:
-    m_Text: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    m_Text: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
     m_Image: {fileID: 0}
     m_Tooltip: Url of the origin remote
   lastCurrentBranchAndRemoteChangedEvent:
-    updatedTimeString: 2025-03-01T18:34:56.550+02:00
+    updatedTimeString: 2025-03-07T08:55:47.771+02:00
     cacheType: 1
   lastTrackingStatusChangedEvent:
-    updatedTimeString: 2025-03-01T18:40:15.215+02:00
+    updatedTimeString: 2025-03-07T08:55:56.808+02:00
     cacheType: 5
   lastStatusEntriesChangedEvent:
-    updatedTimeString: 2025-03-01T18:40:15.209+02:00
+    updatedTimeString: 2025-03-07T08:55:56.804+02:00
     cacheType: 6
   pullButtonContent:
     m_Text: Pull
@@ -1651,9 +1687,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 025a0000
-    m_LastClickedID: 23042
-    m_ExpandedIDs: 00000000f65900000a5a00003a5a00003c5a00003e5a0000405a000000ca9a3bffffff7f
+    m_SelectedIDs: c2580000
+    m_LastClickedID: 22722
+    m_ExpandedIDs: 00000000b658000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1681,7 +1717,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f6590000
+    m_ExpandedIDs: 00000000b6580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1709,7 +1745,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000000000000a46700009a67000096670000e46a0000cc580000
+    m_ExpandedInstanceIDs: c623000000000000a46700009a67000096670000e46a0000cc580000a6590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1821,9 +1857,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: de5a0000
+      m_SelectedIDs: f8580000
       m_LastClickedID: 0
-      m_ExpandedIDs: 9ef7ffff42f8ffff1efbffff
+      m_ExpandedIDs: 40e3ffff1efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2385,9 +2421,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 17.046085, y: -4.7719483, z: -0.25910807}
+    m_Target: {x: -1.1123469, y: 0.12023359, z: 3.6370378}
     speed: 2
-    m_Value: {x: 17.046085, y: -4.7719483, z: -0.25910807}
+    m_Value: {x: -1.1123469, y: 0.12023359, z: 3.6370378}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -2437,9 +2473,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 19.814356
+    m_Target: 6.8905716
     speed: 2
-    m_Value: 19.814356
+    m_Value: 6.8905716
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2564,8 +2600,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -2578,18 +2614,18 @@ MonoBehaviour:
       y: 21
       width: 1026
       height: 624
-    m_Scale: {x: 1.7535053, y: 1.7535052}
-    m_Translation: {x: 467.29752, y: 292.26068}
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 513, y: 312}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -266.49335
-      y: -166.67226
-      width: 585.1137
-      height: 355.85864
+      x: -513
+      y: -312
+      width: 1026
+      height: 624
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1026, y: 645}
