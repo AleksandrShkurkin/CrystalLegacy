@@ -1,12 +1,20 @@
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
 
 public class Player : LivingEntity
 {
-    public TextMeshProUGUI healthText;
-    public int exp;
+    public static Player Instance {get; private set;}
+
+    [SerializeField] private TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI levelText;
+    [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private int exp = 0;
+    public float MoveSpeed { get; set; } = 4f;
+    public int Mana { get; set; } = 100;
     private int killCount = 0;
     public GameObject companion;
+    public List<Weapon> weapons;
 
     private void OnEnable()
     {
@@ -18,18 +26,28 @@ public class Player : LivingEntity
         Enemy.OnEnemyDefeated -= GainExp;
     }
 
-    public void Start()
+    public void Awake()
     {
-        level = 0;
-        health = 100 + (int)(100 * (level / 10.0f));
-        defense = 1.0f + (level / 10.0f);
-        attackDamage = 5 + (level * 2);
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        Level = 0;
+        Health = 100 + (int)(100 * (Level / 10.0f));
+        Defense = 1.0f + (Level / 10.0f);
+        AttackDamage = 5 + (Level * 2);
     }
     void Update()
     {
-        healthText.text = "HP: " + health.ToString() + "\nLevel: " + level.ToString() +
-        "\nExp: " + exp.ToString() + "/" + (100 + (level * 50)).ToString();
-        if (exp >= 100 + (level * 50))
+        healthText.text = "HP: " + Health.ToString() + "%";
+        levelText.text = "Level: " + Level.ToString() + " (" + exp + "/" + (100 + (Level * 50)).ToString() + ")";
+        manaText.text = "Mana: " + Mana.ToString() + "/100";
+        if (exp >= 100 + (Level * 50))
         {
             LevelUp();
             exp = 0;
@@ -39,35 +57,36 @@ public class Player : LivingEntity
     private void LevelUp()
     {
         AchievementManager.Instance.UnlockAchievement("Nothing is clear, but it's very interesting");
-        level += 1;
-        health = 100 + (int)(100 * (level / 10.0f));
-        defense = 1.0f + (level / 10.0f);
-        attackDamage = 5 + (level * 2);
+        Level += 1;
+        Health = 100 + (int)(100 * (Level / 10.0f));
+        Defense = 1.0f + (Level / 10.0f);
+        AttackDamage = 5 + (Level * 2);
     }
 
     private void GainExp(int expGain)
     {
-        if (level == 5)
+        if (Level == 5)
         {
             return;
         }
         exp += expGain;
+        Mana += 10;
         killCount++;
 
         if (killCount == 1)
         {
             AchievementManager.Instance.UnlockAchievement("First Blood");
         }
-        if (killCount == 5)
+        if (killCount == 10)
         {
             AchievementManager.Instance.UnlockAchievement("Moral superiority");
-            GameObject comp = Instantiate(companion, transform.position + (Vector3)(Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
+            Instantiate(companion, transform.position + (Vector3)(Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
         }
         if (killCount == 50)
         {
             AchievementManager.Instance.UnlockAchievement("Battle Veteran");
         }
-        if (health < 10)
+        if (Health < 10)
         {
             AchievementManager.Instance.UnlockAchievement("Dead or Alive?");
         }
@@ -75,8 +94,8 @@ public class Player : LivingEntity
 
     public override void RecieveDamage(int damage)
     {
-        health -= Mathf.RoundToInt(damage / defense);
-        if (health <= 0)
+        Health -= Mathf.RoundToInt(damage / Defense);
+        if (Health <= 0)
         {
 #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;

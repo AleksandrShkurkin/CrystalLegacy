@@ -43,7 +43,7 @@ public class CompanionAttack : MonoBehaviour
     {
         if (enemy != null)
         {
-            enemy.RecieveDamage(companion.attackDamage);
+            enemy.RecieveDamage(companion.AttackDamage);
         }
     }
 }
