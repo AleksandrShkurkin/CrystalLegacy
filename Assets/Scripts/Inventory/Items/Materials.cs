@@ -9,6 +9,5 @@ public class Materials : Item
 {
     public MaterialType materialType;
     public int amountStacked;
-    public int valueBought;
     public int valueSold;
 }

@@ -9,9 +9,11 @@ public class Player : LivingEntity
     [SerializeField] private TextMeshProUGUI healthText;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI manaText;
+    [SerializeField] private TextMeshProUGUI moneyText;
     [SerializeField] private int exp = 0;
     public float MoveSpeed { get; set; } = 4f;
     public int Mana { get; set; } = 100;
+    public int Money { get; set; } = 100;
     private int killCount = 0;
     public GameObject companion;
     public List<Weapon> weapons;
@@ -47,6 +49,7 @@ public class Player : LivingEntity
         healthText.text = "HP: " + Health.ToString() + "%";
         levelText.text = "Level: " + Level.ToString() + " (" + exp + "/" + (100 + (Level * 50)).ToString() + ")";
         manaText.text = "Mana: " + Mana.ToString() + "/100";
+        moneyText.text = "Money: " + Money.ToString() + "$";
         if (exp >= 100 + (Level * 50))
         {
             LevelUp();

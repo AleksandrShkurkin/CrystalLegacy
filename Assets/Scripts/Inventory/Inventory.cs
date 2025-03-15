@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instance { get; private set; }
     [SerializeField] private TextMeshProUGUI potionText;
+    [SerializeField] private TextMeshProUGUI weaponText;
 
     public List<Weapon> weapons = new List<Weapon>();
     public List<Armor> armor = new List<Armor>();
@@ -113,6 +114,10 @@ public class Inventory : MonoBehaviour
             potions[i].amountStacked = 0;
         }
         EquipPotion(potions[0]);
+        for (int i = 0; i < materials.Count; i++)
+        {
+            materials[i].amountStacked = 0;
+        }
     }
 
     public void Update()
@@ -134,6 +139,26 @@ public class Inventory : MonoBehaviour
             }
             potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
         }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            bool result = Craft.Instance.CraftItem(currentPotion);
+            if (result)
+            {
+                Debug.Log("Crafted: " + currentPotion.itemName);
+            }
+            else
+            {
+                Debug.Log("Not enough materials to craft: " + currentPotion.itemName);
+            }
+        }
+        if (meleeSelected)
+        {
+            weaponText.text = $"Weapon: {currentMeleeWeapon.itemName}";
+        }
+        else
+        {
+            weaponText.text = $"Weapon: {currentRangedWeapon.itemName}";
+        }
     }
 
     public void AddItem(Item item)
@@ -152,44 +177,52 @@ public class Inventory : MonoBehaviour
                 string armInv = String.Join(", ", armor.Select(a => a.itemName));
                 Debug.Log(armInv);
                 break;
-            case Potion potion:
-                if (!potions.Contains(potion))
-                {
-                    potions.Add(potion);
-                    potion.amountStacked++;
-                }
-                else
-                {
-                    potion.amountStacked++;
-                }
-                break;
-            case Materials material:
-                material.amountStacked++;
-                break;
         }
     }
 
-    public bool RemoveItem(Item item, int amount)
+    public void AddItems(Item item, int amount)
     {
         switch (item)
         {
             case Potion potion:
-                if (potion.amountStacked >= amount)
+                if (!potions.Contains(potion))
                 {
-                    potion.amountStacked -= amount;
-                    return true;
+                    potions.Add(potion);
                 }
-                return false;
+                potion.amountStacked += amount;
+                break;
             case Materials material:
-                if (material.amountStacked >= amount)
-                {
-                    material.amountStacked -= amount;
-                    return true;
-                }
-                return false;
-            default:
-                return false;
+                AddMaterial(material.materialType, amount);
+                break;
         }
+    }
+
+    public void AddMaterial(MaterialType type, int amount)
+    {
+        Materials material = materials.Find(m => m.materialType == type);
+        material.amountStacked += amount;
+    }
+
+    public bool CheckAmount(MaterialType type, int amount)
+    {
+        Materials material = materials.Find(m => m.materialType == type);
+        if (material.amountStacked >= amount)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public int GetMaterialAmount(MaterialType type)
+    {
+        Materials material = materials.Find(m => m.materialType == type);
+        return material.amountStacked;
+    }
+
+    public void RemoveMaterial(MaterialType type, int amount)
+    {
+        Materials material = materials.Find(m => m.materialType == type);
+        material.amountStacked -= amount;
     }
 
     public void EquipWeapon(Weapon weapon)
