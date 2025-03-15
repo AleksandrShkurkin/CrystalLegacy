@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72204a83fc1ceb9479fb2a4d18cc462a, type: 3}
   m_Name: Potion Strength Lvl2
   m_EditorClassIdentifier: 
-  recipeName: Porion Strength Recipe (lvl1)
-  itemCrafted: {fileID: 11400000, guid: 71e77cb2244d25c4f8d47c512e17cd27, type: 2}
+  recipeName: Porion Strength Recipe (lvl2)
+  itemCrafted: {fileID: 11400000, guid: 130a2ddb78f2b1c45ae7159c93dad1ce, type: 2}
   materialsRequired:
   - materialType: 0
-    amountRequired: 2
+    amountRequired: 3
   - materialType: 4
     amountRequired: 1
   - materialType: 9
-    amountRequired: 3
+    amountRequired: 4

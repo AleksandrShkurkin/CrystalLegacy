@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72204a83fc1ceb9479fb2a4d18cc462a, type: 3}
   m_Name: Potion Health Lvl3
   m_EditorClassIdentifier: 
-  recipeName: Porion Health Recipe (lvl1)
-  itemCrafted: {fileID: 11400000, guid: 1263f49740c2d9b4abf7cd426f795edb, type: 2}
+  recipeName: Porion Health Recipe (lvl3)
+  itemCrafted: {fileID: 11400000, guid: 037c7f91c81dd6248bdf1ec2ad12ca7c, type: 2}
   materialsRequired:
   - materialType: 0
-    amountRequired: 2
+    amountRequired: 4
   - materialType: 4
     amountRequired: 1
   - materialType: 6
-    amountRequired: 3
+    amountRequired: 6

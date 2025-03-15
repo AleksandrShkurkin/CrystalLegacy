@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72204a83fc1ceb9479fb2a4d18cc462a, type: 3}
   m_Name: Potion Speed Lvl3
   m_EditorClassIdentifier: 
-  recipeName: Porion Speed Recipe (lvl1)
-  itemCrafted: {fileID: 11400000, guid: 5ebe896bad18c0e45a31414acacecbb8, type: 2}
+  recipeName: Porion Speed Recipe (lvl3)
+  itemCrafted: {fileID: 11400000, guid: a7dc4f685db487d45a7c69083c881ff6, type: 2}
   materialsRequired:
   - materialType: 0
-    amountRequired: 2
+    amountRequired: 4
   - materialType: 4
     amountRequired: 1
   - materialType: 8
-    amountRequired: 3
+    amountRequired: 6
