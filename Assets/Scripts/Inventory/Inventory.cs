@@ -145,6 +145,7 @@ public class Inventory : MonoBehaviour
             if (result)
             {
                 Debug.Log("Crafted: " + currentPotion.itemName);
+                potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
             }
             else
             {

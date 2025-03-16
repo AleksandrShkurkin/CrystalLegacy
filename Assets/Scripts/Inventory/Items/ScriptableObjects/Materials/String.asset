@@ -16,6 +16,5 @@ MonoBehaviour:
   itemDescription: A piece of string
   itemIcon: {fileID: 21300000, guid: ba345f2f643d842459447c374943401d, type: 3}
   materialType: 4
-  amountStacked: 0
-  valueBought: 8
+  amountStacked: 3
   valueSold: 7
