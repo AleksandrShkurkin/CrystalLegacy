@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class Companion : LivingEntity
 {
-    private Player player;
     private int previousLevel = -1;
 
     void Start()
     {
-        level = 0;
-        health = 0;
-        defense = 0;
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        Level = 0;
+        Health = 0;
+        Defense = 0;
     }
 
     void Update()
     {
-        level = player.level;
-        if (level != previousLevel)
+        Level = Player.Instance.Level;
+        if (Level != previousLevel)
         {
-            previousLevel = level;
-            attackDamage = 7 + (previousLevel * 2);
+            previousLevel = Level;
+            AttackDamage = 7 + (previousLevel * 2);
         }
     }
 

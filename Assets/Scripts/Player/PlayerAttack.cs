@@ -4,38 +4,64 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private WeaponBase weapon;
-    public Player player;
-    public GameObject weaponHolder;
-    public float attackCooldown = 0.5f;
-    public bool canAttack = true;
+    [SerializeField]
+    private GameObject hitboxArea;
+    private bool canAttack = true;
+    private CooldownManager attackCooldown;
+    private CooldownManager durationCooldown;
+    private float cooldownTime = 0.5f;
+    private float attackDuration = 0.1f;
 
     void Start()
     {
-        weapon = weaponHolder.GetComponentInChildren<WeaponBase>();
+        attackCooldown = new CooldownManager(cooldownTime + attackDuration);
+        durationCooldown = new CooldownManager(attackDuration);
     }
 
     void Update()
     {
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
-            canAttack = false;
-            StartCoroutine(AttackSequence());
+            if (Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetMeleeWeapon() != null)
+            {
+                Inventory.Instance.GetMeleeWeapon().Attack(this);
+                durationCooldown.InitiateCooldown(Time.time);
+                attackCooldown.InitiateCooldown(Time.time);
+            }
+            else if (!Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetRangedWeapon() != null
+            && Player.Instance.Mana > 0)
+            {
+                Weapon weaponRanged = Inventory.Instance.GetRangedWeapon();
+                weaponRanged.Attack(this);
+                if (weaponRanged.GetType() == typeof(WandPlasma))
+                    attackCooldown.InitiateCooldown(Time.time - attackDuration);
+                else
+                    attackCooldown.InitiateCooldown(Time.time + cooldownTime * 5);
+                canAttack = false;
+            }
+
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            Inventory.Instance.SwapWeapons();
+        }
+
+        if (durationCooldown.IsCooldownFinished(Time.time))
+        {
+            hitboxArea.SetActive(false);
+        }
+
+        if (attackCooldown.IsCooldownFinished(Time.time))
+        {
+            canAttack = true; 
         }
     }
 
-    IEnumerator AttackSequence()
+    public void ActivateHitbox(int meleeDamage)
     {
-        weapon = weaponHolder.GetComponentInChildren<WeaponBase>();
-
-        int finalDMG = player.attackDamage;
-        if (Random.value < 0.15f)
-        {
-            finalDMG = Mathf.RoundToInt(player.attackDamage * 1.5f);
-        }
-
-        yield return StartCoroutine(weapon.Attack(finalDMG));
-        yield return new WaitForSeconds(attackCooldown);
-        canAttack = true;
+        canAttack = false;
+        hitboxArea.SetActive(true);
+        hitboxArea.GetComponent<MeleeAttack>().SetDamage(meleeDamage + Player.Instance.AttackDamage);
     }
 }

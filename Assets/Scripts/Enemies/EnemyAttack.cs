@@ -44,7 +44,7 @@ public class EnemyAttack : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null && player.CompareTag("Player"))
         {
-            player.GetComponent<Player>().RecieveDamage(enemy.attackDamage);
+            player.GetComponent<Player>().RecieveDamage(enemy.AttackDamage);
         }
     }
 }

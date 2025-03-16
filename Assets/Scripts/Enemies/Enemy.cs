@@ -5,30 +5,30 @@ using System;
 
 public class Enemy : LivingEntity
 {
-    public TextMeshProUGUI healthText;
+    [SerializeField] private TextMeshProUGUI healthText;
     public static event Action<int> OnEnemyDefeated;
     public event Action OnDeathRespawn;
 
     public void Start()
     {
-        level = UnityEngine.Random.Range(0, 5);
-        health = 100 + (int)(100 * (level / 10.0f));
-        defense = 1.0f + (level / 10.0f);
-        attackDamage = 10 + (level * 2);
+        Level = UnityEngine.Random.Range(0, 5);
+        Health = 100 + (int)(100 * (Level / 10.0f));
+        Defense = 1.0f + (Level / 10.0f);
+        AttackDamage = 10 + (Level * 2);
     }
 
     void Update()
     {
-        healthText.text = "HP: " + health.ToString() + "\nLevel: " + level.ToString();
+        healthText.text = "HP: " + Health.ToString() + "\nLevel: " + Level.ToString();
     }
 
     public override void RecieveDamage(int damage)
     {
-        health -= Mathf.RoundToInt(damage / defense);
-        if (health <= 0)
+        Health -= Mathf.RoundToInt(damage / Defense);
+        if (Health <= 0)
         {
             OnDeathRespawn?.Invoke();
-            OnEnemyDefeated?.Invoke(Math.Max(level * 10, 5));
+            OnEnemyDefeated?.Invoke(Math.Max(Level * 10, 5));
             Destroy(gameObject);
         }
     }

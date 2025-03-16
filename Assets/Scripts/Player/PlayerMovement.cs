@@ -3,7 +3,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    public float moveSpeed = 4f;
     private Vector2 movement;
     private SpriteRenderer spriteRenderer;
 
@@ -13,32 +12,10 @@ public class PlayerMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Original code
-    // void Update()
-    // {
-    //     movement = Vector2.zero;
-    //     movement.x = Input.GetAxisRaw("Horizontal");
-    //     movement.y = Input.GetAxisRaw("Vertical");
-
-    //     if (movement != Vector2.zero)
-    //     {
-    //         if (Mathf.Abs(movement.x) >= Mathf.Abs(movement.y))
-    //         {
-    //             transform.rotation = Quaternion.Euler(0, 0, movement.x > 0 ? 0 : 180);
-    //         }
-    //         else
-    //         {
-    //             transform.rotation = Quaternion.Euler(0, 0, movement.y > 0 ? 90 : -90);
-    //         }
-    //     }
-    // }
-
     // Rotation based on the mouse position
     void Update()
     {
-        movement = Vector2.zero;
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
         if (movement.sqrMagnitude > 1)
         {
@@ -56,10 +33,19 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, 0, direction.y > 0 ? 90 : -90);
         }
+
+        if (movement != Vector2.zero)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
     void FixedUpdate()
     {
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + movement * Player.Instance.MoveSpeed * Time.fixedDeltaTime);
     }
 }

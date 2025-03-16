@@ -380,10 +380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f868c3ed59aeed42b1e104a8433f923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  defense: 0
-  attackDamage: 0
-  level: 0
   healthText: {fileID: 5003975156878793521}
 --- !u!1 &6748715955685652086
 GameObject:
@@ -446,7 +442,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &1187027983465364205
 MonoBehaviour:
