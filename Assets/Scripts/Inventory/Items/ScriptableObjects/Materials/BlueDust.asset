@@ -15,8 +15,7 @@ MonoBehaviour:
   itemName: Blue Dust
   itemDescription: A magical blue dust. Nobody knows how it is extracted, but everyone
     uses in for mana potions
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 21300000, guid: 54ce89f1e912746ecb70ddf53bead1f8, type: 3}
   materialType: 7
   amountStacked: 0
-  valueBought: 23
   valueSold: 20
