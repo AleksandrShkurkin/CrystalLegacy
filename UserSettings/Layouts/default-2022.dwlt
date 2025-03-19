@@ -1,0 +1,2671 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PixelRect:
+    serializedVersion: 2
+    x: 0
+    y: 43
+    width: 1920
+    height: 989
+  m_ShowMode: 4
+  m_Title: Git for Unity
+  m_RootView: {fileID: 6}
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_Maximized: 1
+--- !u!114 &2
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 9}
+  - {fileID: 3}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 30
+    width: 1920
+    height: 939
+  m_MinSize: {x: 300, y: 100}
+  m_MaxSize: {x: 24288, y: 16192}
+  vertical: 0
+  controlID: 102
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: Window
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 1351
+    y: 0
+    width: 569
+    height: 939
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 13}
+  m_Panes:
+  - {fileID: 16}
+  - {fileID: 13}
+  - {fileID: 12}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 323
+    height: 842
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &5
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: PackageManagerWindow
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 842
+    width: 1351
+    height: 97
+  m_MinSize: {x: 801, y: 271}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 14}
+  m_Panes:
+  - {fileID: 15}
+  - {fileID: 19}
+  - {fileID: 14}
+  m_Selected: 2
+  m_LastSelected: 0
+--- !u!114 &6
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12008, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 7}
+  - {fileID: 2}
+  - {fileID: 8}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1920
+    height: 989
+  m_MinSize: {x: 875, y: 300}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_UseTopView: 1
+  m_TopViewHeight: 30
+  m_UseBottomView: 1
+  m_BottomViewHeight: 20
+--- !u!114 &7
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12011, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1920
+    height: 30
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+  m_LastLoadedLayoutName: 
+--- !u!114 &8
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12042, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 969
+    width: 1920
+    height: 20
+  m_MinSize: {x: 0, y: 0}
+  m_MaxSize: {x: 0, y: 0}
+--- !u!114 &9
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 10}
+  - {fileID: 5}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1351
+    height: 939
+  m_MinSize: {x: 200, y: 100}
+  m_MaxSize: {x: 16192, y: 16192}
+  vertical: 1
+  controlID: 46
+--- !u!114 &10
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Children:
+  - {fileID: 4}
+  - {fileID: 11}
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1351
+    height: 842
+  m_MinSize: {x: 200, y: 50}
+  m_MaxSize: {x: 16192, y: 8096}
+  vertical: 0
+  controlID: 47
+--- !u!114 &11
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: 
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 323
+    y: 0
+    width: 1028
+    height: 842
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 20}
+  m_Panes:
+  - {fileID: 18}
+  - {fileID: 20}
+  m_Selected: 1
+  m_LastSelected: 0
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f683d99f24875748a6656966ca9cea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 240, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Tile Palette
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1351
+    y: 73
+    width: 568
+    height: 918
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &13
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ffb9ccd5681bd841ae77e9e5571f770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Git for Unity
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1351
+    y: 73
+    width: 568
+    height: 918
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  progressMessageClearTime: -1
+  notificationClearTime: -1
+  timeSinceLastRotation: -1
+  currentBranchAndRemoteHasUpdate: 0
+  currentTrackingStatusHasUpdate: 0
+  currentStatusEntriesHasUpdate: 0
+  repositoryProgressHasUpdate: 0
+  appManagerProgressHasUpdate: 0
+  changeTab: 5
+  activeTab: 5
+  initProjectView:
+    hasCompletedInitialCheck: 0
+    isUserDataPresent: 0
+    lastCheckUserChangedEvent:
+      updatedTimeString: 0001-01-01T00:00:00.000+00:00
+      cacheType: 8
+  branchesView:
+    treeLocals:
+      IsRemote: 0
+      folders:
+        keys:
+        - Local branches
+        values:
+        - path: Local branches
+          label: Local branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: Local branches
+      pathSeparator: /
+      displayRootNode: 1
+      isSelectable: 1
+      isCheckable: 0
+      nodes:
+      - path: Local branches
+        label: Local branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: Sandra
+        label: Sandra
+        level: 1
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 1
+        treeIsCheckable: 0
+        checkState: 0
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+    treeRemotes:
+      IsRemote: 1
+      folders:
+        keys:
+        - Remote branches
+        - origin
+        values:
+        - path: Remote branches
+          label: Remote branches
+          level: 0
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+        - path: origin
+          label: origin
+          level: 1
+          isFolder: 1
+          isContainer: 0
+          isCollapsed: 0
+          isHidden: 0
+          isActive: 0
+          treeIsCheckable: 0
+          checkState: 0
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: Remote branches
+      pathSeparator: /
+      displayRootNode: 1
+      isSelectable: 1
+      isCheckable: 0
+      nodes:
+      - path: Remote branches
+        label: Remote branches
+        level: 0
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin
+        label: origin
+        level: 1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/master
+        label: master
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/Nasya
+        label: Nasya
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/OleksandrSh
+        label: OleksandrSh
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      - path: origin/Sandra
+        label: Sandra
+        level: 2
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+    mode: 0
+    newBranchName: 
+    scroll: {x: 0, y: 0}
+    disableDelete: 1
+    disableCreate: 1
+    lastLocalAndRemoteBranchListChangedEvent:
+      updatedTimeString: 2025-03-14T22:05:28.676+02:00
+      cacheType: 2
+    lastCurrentBranchAndRemoteChange:
+      updatedTimeString: 2025-03-14T22:05:28.261+02:00
+      cacheType: 1
+    currentBranch:
+      name: Sandra
+      tracking: 
+    currentRemote:
+      name: origin
+      url: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+      login: 
+      user: 
+      host: 
+      function: 0
+      token: 
+    localBranches:
+    - name: Sandra
+      tracking: 
+    remoteBranches:
+    - name: origin/master
+      tracking: '[None]'
+    - name: origin/Nasya
+      tracking: '[None]'
+    - name: origin/OleksandrSh
+      tracking: '[None]'
+    - name: origin/Sandra
+      tracking: '[None]'
+  changesView:
+    currentBranchHasUpdate: 0
+    currentStatusEntriesHasUpdate: 0
+    currentLocksHasUpdate: 0
+    commitBody: 
+    commitMessage: 
+    currentBranch: Sandra
+    treeScroll: {x: 0, y: 0}
+    treeChanges:
+      assets:
+        keys: []
+        values: []
+      folders:
+        keys: []
+        values: []
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: 
+      pathSeparator: \
+      displayRootNode: 0
+      isSelectable: 1
+      isCheckable: 1
+      isUsingGlobalSelection: 1
+      nodes:
+      - path: 
+        label: 
+        level: -1
+        isFolder: 1
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 1
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+    gitStatusEntries: []
+    changedFilesText: No changed files
+    lastCurrentBranchChangedEvent:
+      updatedTimeString: 2025-02-28T18:47:59.492+02:00
+      cacheType: 1
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2025-02-28T18:48:05.507+02:00
+      cacheType: 6
+    lastLocksChangedEvent:
+      updatedTimeString: 2025-02-28T18:47:57.673+02:00
+      cacheType: 7
+  historyView:
+    currentLogHasUpdate: 0
+    currentTrackingStatusHasUpdate: 0
+    logEntries:
+    - commitID: 93312bbe193b33268c6933a124e3f6a414ca9f16
+      mergeA: 
+      mergeB: 
+      authorName: Oleksandr Shkurkin
+      authorEmail: saha.sanek.555@gmail.com
+      commitEmail: saha.sanek.555@gmail.com
+      commitName: Oleksandr Shkurkin
+      summary: Added enemy attacks, player health system
+      description: 
+      timeString: 2025-01-30T20:31:23.000+01:00
+      commitTimeString: 2025-01-30T20:31:23.000+01:00
+      changes:
+      - path: Assets\Scenes\SampleScene.unity
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+        projectPath: Assets\Scenes\SampleScene.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\Enemy.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs
+        projectPath: Assets\Scripts\Enemies\Enemy.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\EnemyAttack.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyAttack.cs
+        projectPath: Assets\Scripts\Enemies\EnemyAttack.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\EnemyAttack.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyAttack.cs.meta
+        projectPath: Assets\Scripts\Enemies\EnemyAttack.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\Player.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs
+        projectPath: Assets\Scripts\Player\Player.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\PlayerMovement.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs
+        projectPath: Assets\Scripts\Player\PlayerMovement.cs
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+      - path: Assets\Scripts\UiFix.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\UiFix.cs
+        projectPath: Assets\Scripts\UiFix.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\UiFix.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\UiFix.cs.meta
+        projectPath: Assets\Scripts\UiFix.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    - commitID: 7cc3ef82663e23aa23cd3e15498b80fb005ada1f
+      mergeA: 
+      mergeB: 
+      authorName: Oleksandr Shkurkin
+      authorEmail: saha.sanek.555@gmail.com
+      commitEmail: saha.sanek.555@gmail.com
+      commitName: Oleksandr Shkurkin
+      summary: Enemy movement added, minor Player attack changes
+      description: 
+      timeString: 2025-01-30T12:08:09.000+01:00
+      commitTimeString: 2025-01-30T12:08:09.000+01:00
+      changes:
+      - path: Assets\Scenes\SampleScene.unity
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+        projectPath: Assets\Scenes\SampleScene.unity
+        originalPath: 
+        indexStatus: 3
+        workTreeStatus: 0
+    - commitID: 1a602eb6f4a01883d978c3caf9e1e7f1c4cd1fe5
+      mergeA: 
+      mergeB: 
+      authorName: Oleksandr Shkurkin
+      authorEmail: saha.sanek.555@gmail.com
+      commitEmail: saha.sanek.555@gmail.com
+      commitName: Oleksandr Shkurkin
+      summary: Enemy movement added, minor Player attack changes
+      description: 
+      timeString: 2025-01-30T12:05:47.000+01:00
+      commitTimeString: 2025-01-30T12:05:47.000+01:00
+      changes:
+      - path: Assets\Scripts\Enemies.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies.meta
+        projectPath: Assets\Scripts\Enemies.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\Enemy.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs
+        projectPath: Assets\Scripts\Enemies\Enemy.cs
+        originalPath: Assets\Scripts\Enemy.cs
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\Enemy.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs.meta
+        projectPath: Assets\Scripts\Enemies\Enemy.cs.meta
+        originalPath: Assets\Scripts\Enemy.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+        projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.meta
+        projectPath: Assets\Scripts\Player.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\Player.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs
+        projectPath: Assets\Scripts\Player\Player.cs
+        originalPath: Assets\Scripts\Player.cs
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\Player.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs.meta
+        projectPath: Assets\Scripts\Player\Player.cs.meta
+        originalPath: Assets\Scripts\Player.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\PlayerAttack.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerAttack.cs
+        projectPath: Assets\Scripts\Player\PlayerAttack.cs
+        originalPath: Assets\Scripts\PlayerAttack.cs
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\PlayerAttack.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerAttack.cs.meta
+        projectPath: Assets\Scripts\Player\PlayerAttack.cs.meta
+        originalPath: Assets\Scripts\PlayerAttack.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\PlayerMovement.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs
+        projectPath: Assets\Scripts\Player\PlayerMovement.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player\PlayerMovement.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs.meta
+        projectPath: Assets\Scripts\Player\PlayerMovement.cs.meta
+        originalPath: Assets\Scripts\PlayerMovement.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\PlayerMovement.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs
+        projectPath: Assets\Scripts\PlayerMovement.cs
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Scripts\WeaponSword.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs
+        projectPath: Assets\Scripts\WeaponSword.cs
+        originalPath: 
+        indexStatus: 5
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapons.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons.meta
+        projectPath: Assets\Scripts\Weapons.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapons\Weapon.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\Weapon.cs
+        projectPath: Assets\Scripts\Weapons\Weapon.cs
+        originalPath: Assets\Scripts\Weapon.cs
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapons\Weapon.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\Weapon.cs.meta
+        projectPath: Assets\Scripts\Weapons\Weapon.cs.meta
+        originalPath: Assets\Scripts\Weapon.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapons\WeaponSword.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\WeaponSword.cs
+        projectPath: Assets\Scripts\Weapons\WeaponSword.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapons\WeaponSword.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\WeaponSword.cs.meta
+        projectPath: Assets\Scripts\Weapons\WeaponSword.cs.meta
+        originalPath: Assets\Scripts\WeaponSword.cs.meta
+        indexStatus: 6
+        workTreeStatus: 0
+    - commitID: 0e9acb657537469d17156a9bd23e04fb0e9730a5
+      mergeA: 
+      mergeB: 
+      authorName: Oleksandr Shkurkin
+      authorEmail: saha.sanek.555@gmail.com
+      commitEmail: saha.sanek.555@gmail.com
+      commitName: Oleksandr Shkurkin
+      summary: First commit, add TextMesh Pro
+      description: 
+      timeString: 2025-01-27T23:14:05.000+01:00
+      commitTimeString: 2025-01-27T23:14:05.000+01:00
+      changes:
+      - path: .collabignore
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.collabignore
+        projectPath: .collabignore
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Prefabs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Prefabs.meta
+        projectPath: Assets\Prefabs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes.meta
+        projectPath: Assets\Scenes.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\SampleScene.unity
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+        projectPath: Assets\Scenes\SampleScene.unity
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scenes\SampleScene.unity.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity.meta
+        projectPath: Assets\Scenes\SampleScene.unity.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts.meta
+        projectPath: Assets\Scripts.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemy.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemy.cs
+        projectPath: Assets\Scripts\Enemy.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Enemy.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemy.cs.meta
+        projectPath: Assets\Scripts\Enemy.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\LivingEntity.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\LivingEntity.cs
+        projectPath: Assets\Scripts\LivingEntity.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\LivingEntity.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\LivingEntity.cs.meta
+        projectPath: Assets\Scripts\LivingEntity.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.cs
+        projectPath: Assets\Scripts\Player.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Player.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.cs.meta
+        projectPath: Assets\Scripts\Player.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\PlayerAttack.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerAttack.cs
+        projectPath: Assets\Scripts\PlayerAttack.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\PlayerAttack.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerAttack.cs.meta
+        projectPath: Assets\Scripts\PlayerAttack.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\PlayerMovement.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs
+        projectPath: Assets\Scripts\PlayerMovement.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\PlayerMovement.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs.meta
+        projectPath: Assets\Scripts\PlayerMovement.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapon.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapon.cs
+        projectPath: Assets\Scripts\Weapon.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\Weapon.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapon.cs.meta
+        projectPath: Assets\Scripts\Weapon.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\WeaponSword.cs
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs
+        projectPath: Assets\Scripts\WeaponSword.cs
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Scripts\WeaponSword.cs.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs.meta
+        projectPath: Assets\Scripts\WeaponSword.cs.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Sprites.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites.meta
+        projectPath: Assets\Sprites.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Sprites\idle_default.png
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites\idle_default.png
+        projectPath: Assets\Sprites\idle_default.png
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\Sprites\idle_default.png.meta
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites\idle_default.png.meta
+        projectPath: Assets\Sprites\idle_default.png.meta
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: ProjectSettings\InputManager.asset
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\ProjectSettings\InputManager.asset
+        projectPath: ProjectSettings\InputManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: ProjectSettings\TagManager.asset
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\ProjectSettings\TagManager.asset
+        projectPath: ProjectSettings\TagManager.asset
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    - commitID: 1231963438a6efead924777f713de241cadcf1bf
+      mergeA: 
+      mergeB: 
+      authorName: Oleksandr Shkurkin
+      authorEmail: saha.sanek.555@gmail.com
+      commitEmail: saha.sanek.555@gmail.com
+      commitName: Oleksandr Shkurkin
+      summary: Initial commit
+      description: 
+      timeString: 2025-01-27T19:30:36.000+01:00
+      commitTimeString: 2025-01-27T19:30:36.000+01:00
+      changes:
+      - path: .gitattributes
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.gitattributes
+        projectPath: .gitattributes
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: .gitignore
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.gitignore
+        projectPath: .gitignore
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+      - path: Assets\.gitignore
+        fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\.gitignore
+        projectPath: Assets\.gitignore
+        originalPath: 
+        indexStatus: 4
+        workTreeStatus: 0
+    statusAhead: 0
+    lastLogChangedEvent:
+      updatedTimeString: 2025-02-28T18:37:08.272+02:00
+      cacheType: 3
+    lastTrackingStatusChangedEvent:
+      updatedTimeString: 2025-02-28T18:37:06.542+02:00
+      cacheType: 5
+    historyControl:
+      scroll: {x: 0, y: 0}
+      entries:
+      - commitID: 93312bbe193b33268c6933a124e3f6a414ca9f16
+        mergeA: 
+        mergeB: 
+        authorName: Oleksandr Shkurkin
+        authorEmail: saha.sanek.555@gmail.com
+        commitEmail: saha.sanek.555@gmail.com
+        commitName: Oleksandr Shkurkin
+        summary: Added enemy attacks, player health system
+        description: 
+        timeString: 2025-01-30T20:31:23.000+01:00
+        commitTimeString: 2025-01-30T20:31:23.000+01:00
+        changes:
+        - path: Assets\Scenes\SampleScene.unity
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+          projectPath: Assets\Scenes\SampleScene.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\Enemy.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs
+          projectPath: Assets\Scripts\Enemies\Enemy.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\EnemyAttack.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyAttack.cs
+          projectPath: Assets\Scripts\Enemies\EnemyAttack.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\EnemyAttack.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyAttack.cs.meta
+          projectPath: Assets\Scripts\Enemies\EnemyAttack.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\Player.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs
+          projectPath: Assets\Scripts\Player\Player.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\PlayerMovement.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs
+          projectPath: Assets\Scripts\Player\PlayerMovement.cs
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+        - path: Assets\Scripts\UiFix.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\UiFix.cs
+          projectPath: Assets\Scripts\UiFix.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\UiFix.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\UiFix.cs.meta
+          projectPath: Assets\Scripts\UiFix.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - commitID: 7cc3ef82663e23aa23cd3e15498b80fb005ada1f
+        mergeA: 
+        mergeB: 
+        authorName: Oleksandr Shkurkin
+        authorEmail: saha.sanek.555@gmail.com
+        commitEmail: saha.sanek.555@gmail.com
+        commitName: Oleksandr Shkurkin
+        summary: Enemy movement added, minor Player attack changes
+        description: 
+        timeString: 2025-01-30T12:08:09.000+01:00
+        commitTimeString: 2025-01-30T12:08:09.000+01:00
+        changes:
+        - path: Assets\Scenes\SampleScene.unity
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+          projectPath: Assets\Scenes\SampleScene.unity
+          originalPath: 
+          indexStatus: 3
+          workTreeStatus: 0
+      - commitID: 1a602eb6f4a01883d978c3caf9e1e7f1c4cd1fe5
+        mergeA: 
+        mergeB: 
+        authorName: Oleksandr Shkurkin
+        authorEmail: saha.sanek.555@gmail.com
+        commitEmail: saha.sanek.555@gmail.com
+        commitName: Oleksandr Shkurkin
+        summary: Enemy movement added, minor Player attack changes
+        description: 
+        timeString: 2025-01-30T12:05:47.000+01:00
+        commitTimeString: 2025-01-30T12:05:47.000+01:00
+        changes:
+        - path: Assets\Scripts\Enemies.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies.meta
+          projectPath: Assets\Scripts\Enemies.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\Enemy.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs
+          projectPath: Assets\Scripts\Enemies\Enemy.cs
+          originalPath: Assets\Scripts\Enemy.cs
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\Enemy.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\Enemy.cs.meta
+          projectPath: Assets\Scripts\Enemies\Enemy.cs.meta
+          originalPath: Assets\Scripts\Enemy.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+          projectPath: Assets\Scripts\Enemies\EnemyMoveFollow.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.meta
+          projectPath: Assets\Scripts\Player.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\Player.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs
+          projectPath: Assets\Scripts\Player\Player.cs
+          originalPath: Assets\Scripts\Player.cs
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\Player.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\Player.cs.meta
+          projectPath: Assets\Scripts\Player\Player.cs.meta
+          originalPath: Assets\Scripts\Player.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\PlayerAttack.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerAttack.cs
+          projectPath: Assets\Scripts\Player\PlayerAttack.cs
+          originalPath: Assets\Scripts\PlayerAttack.cs
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\PlayerAttack.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerAttack.cs.meta
+          projectPath: Assets\Scripts\Player\PlayerAttack.cs.meta
+          originalPath: Assets\Scripts\PlayerAttack.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\PlayerMovement.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs
+          projectPath: Assets\Scripts\Player\PlayerMovement.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player\PlayerMovement.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player\PlayerMovement.cs.meta
+          projectPath: Assets\Scripts\Player\PlayerMovement.cs.meta
+          originalPath: Assets\Scripts\PlayerMovement.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\PlayerMovement.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs
+          projectPath: Assets\Scripts\PlayerMovement.cs
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Scripts\WeaponSword.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs
+          projectPath: Assets\Scripts\WeaponSword.cs
+          originalPath: 
+          indexStatus: 5
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapons.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons.meta
+          projectPath: Assets\Scripts\Weapons.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapons\Weapon.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\Weapon.cs
+          projectPath: Assets\Scripts\Weapons\Weapon.cs
+          originalPath: Assets\Scripts\Weapon.cs
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapons\Weapon.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\Weapon.cs.meta
+          projectPath: Assets\Scripts\Weapons\Weapon.cs.meta
+          originalPath: Assets\Scripts\Weapon.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapons\WeaponSword.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\WeaponSword.cs
+          projectPath: Assets\Scripts\Weapons\WeaponSword.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapons\WeaponSword.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapons\WeaponSword.cs.meta
+          projectPath: Assets\Scripts\Weapons\WeaponSword.cs.meta
+          originalPath: Assets\Scripts\WeaponSword.cs.meta
+          indexStatus: 6
+          workTreeStatus: 0
+      - commitID: 0e9acb657537469d17156a9bd23e04fb0e9730a5
+        mergeA: 
+        mergeB: 
+        authorName: Oleksandr Shkurkin
+        authorEmail: saha.sanek.555@gmail.com
+        commitEmail: saha.sanek.555@gmail.com
+        commitName: Oleksandr Shkurkin
+        summary: First commit, add TextMesh Pro
+        description: 
+        timeString: 2025-01-27T23:14:05.000+01:00
+        commitTimeString: 2025-01-27T23:14:05.000+01:00
+        changes:
+        - path: .collabignore
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.collabignore
+          projectPath: .collabignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Prefabs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Prefabs.meta
+          projectPath: Assets\Prefabs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes.meta
+          projectPath: Assets\Scenes.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\SampleScene.unity
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity
+          projectPath: Assets\Scenes\SampleScene.unity
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scenes\SampleScene.unity.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scenes\SampleScene.unity.meta
+          projectPath: Assets\Scenes\SampleScene.unity.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts.meta
+          projectPath: Assets\Scripts.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemy.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemy.cs
+          projectPath: Assets\Scripts\Enemy.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Enemy.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Enemy.cs.meta
+          projectPath: Assets\Scripts\Enemy.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\LivingEntity.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\LivingEntity.cs
+          projectPath: Assets\Scripts\LivingEntity.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\LivingEntity.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\LivingEntity.cs.meta
+          projectPath: Assets\Scripts\LivingEntity.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.cs
+          projectPath: Assets\Scripts\Player.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Player.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Player.cs.meta
+          projectPath: Assets\Scripts\Player.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\PlayerAttack.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerAttack.cs
+          projectPath: Assets\Scripts\PlayerAttack.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\PlayerAttack.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerAttack.cs.meta
+          projectPath: Assets\Scripts\PlayerAttack.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\PlayerMovement.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs
+          projectPath: Assets\Scripts\PlayerMovement.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\PlayerMovement.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\PlayerMovement.cs.meta
+          projectPath: Assets\Scripts\PlayerMovement.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapon.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapon.cs
+          projectPath: Assets\Scripts\Weapon.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\Weapon.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\Weapon.cs.meta
+          projectPath: Assets\Scripts\Weapon.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\WeaponSword.cs
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs
+          projectPath: Assets\Scripts\WeaponSword.cs
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Scripts\WeaponSword.cs.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Scripts\WeaponSword.cs.meta
+          projectPath: Assets\Scripts\WeaponSword.cs.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Sprites.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites.meta
+          projectPath: Assets\Sprites.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Sprites\idle_default.png
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites\idle_default.png
+          projectPath: Assets\Sprites\idle_default.png
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\Sprites\idle_default.png.meta
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\Sprites\idle_default.png.meta
+          projectPath: Assets\Sprites\idle_default.png.meta
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: ProjectSettings\InputManager.asset
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\ProjectSettings\InputManager.asset
+          projectPath: ProjectSettings\InputManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: ProjectSettings\TagManager.asset
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\ProjectSettings\TagManager.asset
+          projectPath: ProjectSettings\TagManager.asset
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      - commitID: 1231963438a6efead924777f713de241cadcf1bf
+        mergeA: 
+        mergeB: 
+        authorName: Oleksandr Shkurkin
+        authorEmail: saha.sanek.555@gmail.com
+        commitEmail: saha.sanek.555@gmail.com
+        commitName: Oleksandr Shkurkin
+        summary: Initial commit
+        description: 
+        timeString: 2025-01-27T19:30:36.000+01:00
+        commitTimeString: 2025-01-27T19:30:36.000+01:00
+        changes:
+        - path: .gitattributes
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.gitattributes
+          projectPath: .gitattributes
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: .gitignore
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\.gitignore
+          projectPath: .gitignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+        - path: Assets\.gitignore
+          fullPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Assets\.gitignore
+          projectPath: Assets\.gitignore
+          originalPath: 
+          indexStatus: 4
+          workTreeStatus: 0
+      statusAhead: 0
+      selectedIndex: -1
+    selectedEntry:
+      commitID: 
+      mergeA: 
+      mergeB: 
+      authorName: 
+      authorEmail: 
+      commitEmail: 
+      commitName: 
+      summary: 
+      description: 
+      timeString: 0001-01-01T00:00:00.000+00:00
+      commitTimeString: 0001-01-01T00:00:00.000+00:00
+      changes: []
+    treeChanges:
+      assets:
+        keys: []
+        values: []
+      folders:
+        keys: []
+        values: []
+      checkedFileNodes:
+        keys: []
+        values: []
+      title: 
+      pathSeparator: /
+      displayRootNode: 0
+      isSelectable: 1
+      isCheckable: 0
+      isUsingGlobalSelection: 0
+      nodes: []
+      selectedNode:
+        path: 
+        label: 
+        level: 0
+        isFolder: 0
+        isContainer: 0
+        isCollapsed: 0
+        isHidden: 0
+        isActive: 0
+        treeIsCheckable: 0
+        checkState: 0
+        isLocked: 0
+        gitStatusEntry:
+          path: 
+          fullPath: 
+          projectPath: 
+          originalPath: 
+          indexStatus: 0
+          workTreeStatus: 0
+    detailsScroll: {x: 0, y: 0}
+  settingsView:
+    gitPathView:
+      gitPath: C:\Program Files\Git\cmd\git.exe
+      gitLfsPath: C:\Program Files\Git\cmd\git-lfs.exe
+      errorMessage: 
+      resetToBundled: 0
+      resetToSystem: 0
+      changingManually: 0
+      installSettingsHidden: 0
+    hasRemote: 1
+    lastCurrentRemoteChangedEvent:
+      updatedTimeString: 2025-03-14T22:07:41.115+02:00
+      cacheType: 1
+    newRepositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    repositoryRemoteName: origin
+    repositoryRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    scroll: {x: 0, y: 0}
+    userSettingsView:
+      gitName: AlexandraBalinskaiya
+      gitEmail: sashabalins@gmail.com
+      newGitName: AlexandraBalinskaiya
+      newGitEmail: sashabalins@gmail.com
+      needsSaving: 0
+      lastCheckUserChangedEvent:
+        updatedTimeString: 2025-03-14T22:06:12.905+02:00
+        cacheType: 8
+      configSettingsHidden: 0
+    repositorySettingsHidden: 0
+    generalSettingsHidden: 0
+    debugSettingsHidden: 0
+    uiSceneSettingsHidden: 0
+    uiProjectSettingsHidden: 0
+  locksView:
+    currentRemoteHasUpdate: 1
+    currentStatusEntriesHasUpdate: 0
+    currentLocksHasUpdate: 0
+    keychainHasUpdate: 1
+    locksControl:
+      scroll: {x: 0, y: 0}
+      gitLockEntries: []
+      assets:
+        keys: []
+        values: []
+      gitStatusDictionary:
+        keys: []
+        values: []
+      selectedEntry:
+        gitLock:
+          id: 
+          path: 
+          owner:
+            name: 
+            email: 
+          lockedAtString: 
+        gitFileStatus: 0
+        lockedAt: "1 \u044F\u043D\u0432. 0001, 02:00"
+    lastCurrentRemoteChangedEvent:
+      updatedTimeString: 2025-02-28T18:43:00.353+02:00
+      cacheType: 1
+    lastLocksChangedEvent:
+      updatedTimeString: 2025-02-28T18:44:20.339+02:00
+      cacheType: 7
+    lastStatusEntriesChangedEvent:
+      updatedTimeString: 2025-02-28T18:44:03.497+02:00
+      cacheType: 6
+    lockedFiles: []
+    gitStatusEntries: []
+    currentUsername: 
+    unlockFileMenuContent:
+      m_Text: Release Lock
+      m_Image: {fileID: 0}
+      m_Tooltip: 
+    forceUnlockFileMenuContent:
+      m_Text: Release Lock (forced)
+      m_Image: {fileID: 0}
+      m_Tooltip: 
+  hasRemote: 1
+  currentRemoteName: origin
+  currentBranch: Sandra
+  currentRemoteUrl: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+  statusAhead: 0
+  statusBehind: 0
+  hasItemsToCommit: 1
+  isTrackingRemoteBranch: 0
+  currentBranchContent:
+    m_Text: Sandra
+    m_Image: {fileID: 0}
+    m_Tooltip: Active branch
+  currentRemoteUrlContent:
+    m_Text: https://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@github.com/AleksandrShkurkin/CrystalLegacy.git
+    m_Image: {fileID: 0}
+    m_Tooltip: Url of the origin remote
+  lastCurrentBranchAndRemoteChangedEvent:
+    updatedTimeString: 2025-03-14T22:07:41.115+02:00
+    cacheType: 1
+  lastTrackingStatusChangedEvent:
+    updatedTimeString: 2025-03-14T22:13:06.244+02:00
+    cacheType: 5
+  lastStatusEntriesChangedEvent:
+    updatedTimeString: 2025-03-14T22:12:26.077+02:00
+    cacheType: 6
+  pullButtonContent:
+    m_Text: Pull
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  pushButtonContent:
+    m_Text: Push
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  refreshButtonContent:
+    m_Text: Refresh
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  fetchButtonContent:
+    m_Text: Fetch
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  repositoryProgressValue: 0
+  repositoryProgressMessage: 
+  appManagerProgressValue: 1
+  appManagerProgressMessage: 
+  primaryConnectionUsername: 
+--- !u!114 &14
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13953, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 800, y: 250}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Package Manager
+    m_Image: {fileID: -2824328813065806953, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 915
+    width: 1350
+    height: 76
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &15
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
+  m_TitleContent:
+    m_Text: Project
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 691
+    width: 1350
+    height: 246
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_VersionControlStates: []
+    m_SoftLockControlStates: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2
+    m_Globs: []
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Packages/com.unity.2d.sprite/Editor/ObjectMenuCreation/DefaultAssets/Textures/v2
+  m_LastFoldersGridSize: -1
+  m_LastProjectPath: D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 456}
+    m_SelectedIDs: c2200100
+    m_LastClickedID: 73922
+    m_ExpandedIDs: 000000004a5900005a5900005e590000605b0000365e0000825e00008e5e000074f2000080f20000c4200100c6200100c8200100ca20010000ca9a3bffffff7f
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 5}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 000000004a590000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c623000000000000a46700009a67000096670000e46a0000cc580000a65900005ce10000fe580000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 5}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 64
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 208
+--- !u!114 &16
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 1351
+    y: 73
+    width: 568
+    height: 918
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: 482
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+--- !u!114 &17
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12061, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Hierarchy
+    m_Image: {fileID: 7966133145522015247, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 73
+    width: 322
+    height: 821
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SceneHierarchy:
+    m_TreeViewState:
+      scrollPos: {x: 0, y: 112}
+      m_SelectedIDs: 92b9f9ff
+      m_LastClickedID: -411246
+      m_ExpandedIDs: 54c5f9ff466dfaff24bbfbff4e90fcffd652feff7668feff0adeffff1efbffffee590000285a0000d45a0000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 4}
+      m_SearchString: 
+    m_ExpandedScenes: []
+    m_CurrenRootInstanceID: 0
+    m_LockTracker:
+      m_IsLocked: 0
+    m_CurrentSortingName: TransformSorting
+  m_WindowGUID: 4c969a2b90040154d917609493e03593
+--- !u!114 &18
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12013, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Scene
+    m_Image: {fileID: 2593428753322112591, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 323
+    y: 73
+    width: 1026
+    height: 821
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData:
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -166, y: -26}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      id: Tool Settings
+      index: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: -141, y: 149}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-grid-and-snap-toolbar
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 24, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-toolbar
+      index: 0
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-scene-view-camera-mode-toolbar
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 1
+      id: unity-search-toolbar
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 26}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-transform-toolbar
+      index: 0
+      layout: 2
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 197}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: unity-component-tools
+      index: 1
+      layout: 2
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 67.5, y: 86}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Orientation
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Light Settings
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Camera
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Constraints
+      index: 2
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Cloth Collisions
+      index: 3
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Navmesh Display
+      index: 4
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Agent Display
+      index: 5
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Obstacle Display
+      index: 6
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Occlusion Culling
+      index: 4
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Physics Debugger
+      index: 5
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Scene Visibility
+      index: 7
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Particles
+      index: 8
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap
+      index: 11
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap Palette Helper
+      index: 12
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__top
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Brush Attributes
+      index: 2
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__left
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Terrain Tools
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__left
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Brush Masks
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Scene View/Lighting Visualization Colors
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--left
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 24, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Overlays/OverlayMenu
+      index: 1
+      layout: 1
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Open Tile Palette
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Scene View/Tile Palette Clipboard
+      index: 1
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 0, y: 25}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Tilemap Focus
+      index: 6
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Scene View/Tile Palette Brush Pick
+      index: 4
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: APV Overlay
+      index: 12
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/Path
+      index: 10
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Scene View/Sprite Swap
+      index: 13
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: SceneView/CamerasOverlay
+      index: 14
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 24, y: 0}
+      snapCorner: 0
+      id: Scene View/PBR Validation Settings
+      index: 15
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 0
+      snapOffset: {x: 0, y: 0}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: Scene View/TrailRenderer
+      index: 9
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 1
+      containerId: overlay-container--right
+      floating: 0
+      collapsed: 0
+      displayed: 1
+      snapOffset: {x: 48, y: 10}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 0
+      id: UnityEditor.SceneViewCameraOverlay
+      index: 10
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    - dockPosition: 0
+      containerId: overlay-toolbar__bottom
+      floating: 0
+      collapsed: 1
+      displayed: 1
+      snapOffset: {x: -207, y: -194}
+      snapOffsetDelta: {x: 0, y: 0}
+      snapCorner: 3
+      id: AINavigationOverlay
+      index: 0
+      layout: 4
+      size: {x: 0, y: 0}
+      sizeOverriden: 0
+    m_OverlaysVisible: 1
+  m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
+  m_Gizmos: 1
+  m_OverrideSceneCullingMask: 6917529027641081856
+  m_SceneIsLit: 1
+  m_SceneLighting: 1
+  m_2DMode: 1
+  m_isRotationLocked: 0
+  m_PlayAudio: 0
+  m_AudioPlay: 0
+  m_Position:
+    m_Target: {x: -0.64882535, y: -0.23399013, z: -0.034919307}
+    speed: 2
+    m_Value: {x: -0.64882535, y: -0.23399013, z: -0.034919307}
+  m_RenderMode: 0
+  m_CameraMode:
+    drawMode: 0
+    name: Shaded
+    section: Shading Mode
+  m_ValidateTrueMetals: 0
+  m_DoValidateTrueMetals: 0
+  m_SceneViewState:
+    m_AlwaysRefresh: 0
+    showFog: 1
+    showSkybox: 0
+    showFlares: 1
+    showImageEffects: 1
+    showParticleSystems: 1
+    showVisualEffectGraphs: 1
+    m_FxEnabled: 1
+  m_Grid:
+    xGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 0, y: 0}
+    yGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    zGrid:
+      m_Fade:
+        m_Target: 0
+        speed: 2
+        m_Value: 0
+      m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
+      m_Pivot: {x: 0, y: 0, z: 0}
+      m_Size: {x: 1, y: 1}
+    m_ShowGrid: 0
+    m_GridAxis: 1
+    m_gridOpacity: 0.5
+  m_Rotation:
+    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    speed: 2
+    m_Value: {x: 0, y: 0, z: 0, w: 1}
+  m_Size:
+    m_Target: 15.195958
+    speed: 2
+    m_Value: 15.195958
+  m_Ortho:
+    m_Target: 1
+    speed: 2
+    m_Value: 1
+  m_CameraSettings:
+    m_Speed: 1
+    m_SpeedNormalized: 0.5
+    m_SpeedMin: 0.001
+    m_SpeedMax: 2
+    m_EasingEnabled: 1
+    m_EasingDuration: 0.4
+    m_AccelerationEnabled: 1
+    m_FieldOfViewHorizontalOrVertical: 60
+    m_NearClip: 0.03
+    m_FarClip: 10000
+    m_DynamicClip: 1
+    m_OcclusionCulling: 0
+  m_LastSceneViewRotation: {x: -0.063863404, y: -0.42929235, z: 0.030448828, w: -0.9003914}
+  m_LastSceneViewOrtho: 0
+  m_ReplacementShader: {fileID: 0}
+  m_ReplacementString: 
+  m_SceneVisActive: 0
+  m_LastLockedObject: {fileID: 0}
+  m_ViewIsLockedToObject: 0
+--- !u!114 &19
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12003, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Console
+    m_Image: {fileID: -4327648978806127646, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 673
+    width: 1456
+    height: 318
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+--- !u!114 &20
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12015, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Game
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 323
+    y: 73
+    width: 1026
+    height: 821
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_SerializedViewNames:
+  - UnityEditor.DeviceSimulation.SimulatorWindow
+  m_SerializedViewValues:
+  - D:\UNIVER\3_kurs_5S\Prog_Ing\GAMES\Location\Library\PlayModeViewStates\0e8da35635d23ee41bcfbfd7130d8504
+  m_PlayModeViewName: GameView
+  m_ShowGizmos: 0
+  m_TargetDisplay: 0
+  m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+  m_TargetSize: {x: 1026, y: 800}
+  m_TextureFilterMode: 0
+  m_TextureHideFlags: 61
+  m_RenderIMGUI: 1
+  m_EnterPlayModeBehavior: 0
+  m_UseMipMap: 0
+  m_VSyncEnabled: 0
+  m_Gizmos: 0
+  m_Stats: 0
+  m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  m_ZoomArea:
+    m_HRangeLocked: 0
+    m_VRangeLocked: 0
+    hZoomLockedByDefault: 0
+    vZoomLockedByDefault: 0
+    m_HBaseRangeMin: -513
+    m_HBaseRangeMax: 513
+    m_VBaseRangeMin: -400
+    m_VBaseRangeMax: 400
+    m_HAllowExceedBaseRangeMin: 1
+    m_HAllowExceedBaseRangeMax: 1
+    m_VAllowExceedBaseRangeMin: 1
+    m_VAllowExceedBaseRangeMax: 1
+    m_ScaleWithWindow: 0
+    m_HSlider: 1
+    m_VSlider: 1
+    m_IgnoreScrollWheelUntilClicked: 0
+    m_EnableMouseInput: 1
+    m_EnableSliderZoomHorizontal: 0
+    m_EnableSliderZoomVertical: 0
+    m_UniformScale: 1
+    m_UpDirection: 1
+    m_DrawArea:
+      serializedVersion: 2
+      x: 0
+      y: 21
+      width: 1026
+      height: 800
+    m_Scale: {x: 1.2464043, y: 1.2464043}
+    m_Translation: {x: 547.5559, y: 385.12054}
+    m_MarginLeft: 0
+    m_MarginRight: 0
+    m_MarginTop: 0
+    m_MarginBottom: 0
+    m_LastShownAreaInsideMargins:
+      serializedVersion: 2
+      x: -439.30844
+      y: -308.98526
+      width: 823.1679
+      height: 641.8463
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1026, y: 821}
+  m_ClearInEditMode: 1
+  m_NoCameraWarning: 1
+  m_LowResolutionForAspectRatios: 01000000000000000000
+  m_XRRenderMode: 0
+  m_RenderTexture: {fileID: 0}
