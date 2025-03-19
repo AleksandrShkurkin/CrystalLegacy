@@ -34,7 +34,7 @@ public class UIShop : MonoBehaviour
 
     public void CloseShop()
     {
-        activeShop.RemoveAllBasket();
+        activeShop.RemoveAllBasketBack();
         activeShop = null;
     }
 
