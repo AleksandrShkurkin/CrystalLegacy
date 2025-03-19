@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance { get; private set; }
     public List<GameObject> menus;
     private bool isOpen = false;
 
-    private void ToggleMenu(GameObject menu)
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public void ToggleMenu(GameObject menu)
     {
         isOpen = !menu.activeSelf;
         CloseAllMenus();
@@ -29,5 +35,10 @@ public class UIManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.G)) ToggleMenu(menus[1]);
         if (Input.GetKeyDown(KeyCode.I)) ToggleMenu(menus[2]);
         if (Input.GetKeyDown(KeyCode.Q)) ToggleMenu(menus[3]);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseAllMenus();
+            Time.timeScale = 1;
+        }
     }
 }

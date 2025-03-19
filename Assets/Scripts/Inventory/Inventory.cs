@@ -22,8 +22,11 @@ public class Inventory : MonoBehaviour
     private Armor currentChest = null;
     private Armor currentPants = null;
     private Armor currentBoots = null;
+    private Potion currentHealthPotion = null;
+    private Potion currentManaPotion = null;
+    private Potion currentSpeedPotion = null;
+    private Potion currentStrengthPotion = null;
     private Potion currentPotion = null;
-    private int potionIndex = 0;
 
     public Weapon GetMeleeWeapon()
     {
@@ -55,6 +58,26 @@ public class Inventory : MonoBehaviour
         return currentBoots;
     }
 
+    public Potion GetHealthPotion()
+    {
+        return currentHealthPotion;
+    }
+
+    public Potion GetManaPotion()
+    {
+        return currentManaPotion;
+    }
+
+    public Potion GetSpeedPotion()
+    {
+        return currentSpeedPotion;
+    }
+
+    public Potion GetStrengthPotion()
+    {
+        return currentStrengthPotion;
+    }
+
     public bool GetWeaponSelected()
     {
         return meleeSelected;
@@ -67,26 +90,15 @@ public class Inventory : MonoBehaviour
 
     public void ChangePotion()
     {
-        if (potions.Count == 0)
-            return;
+        List<Potion> potionSequence = new List<Potion>{
+            currentHealthPotion,
+            currentManaPotion,
+            currentSpeedPotion,
+            currentStrengthPotion
+        };
+        int currentIndex = potionSequence.IndexOf(currentPotion);
 
-        int startIndex = (potionIndex + 1) % potions.Count;
-        int searchIndex = startIndex;
-
-        do
-        {
-            if (potions[potionIndex].amountStacked > 0)
-            {
-                potionIndex = searchIndex;
-                EquipPotion(potions[potionIndex]);
-                return;
-            }
-
-            searchIndex = (searchIndex + 1) % potions.Count;
-        } while (searchIndex != potionIndex);
-
-        potionIndex = startIndex;
-        EquipPotion(potions[potionIndex]);
+        currentPotion = potionSequence[(currentIndex + 1) % potionSequence.Count];
     }
 
     public void Awake()
@@ -95,7 +107,7 @@ public class Inventory : MonoBehaviour
         {
             Instance = this;
         }
-        else 
+        else
         {
             Destroy(gameObject);
         }
@@ -114,6 +126,9 @@ public class Inventory : MonoBehaviour
             potions[i].amountStacked = 0;
         }
         EquipPotion(potions[0]);
+        EquipPotion(potions[1]);
+        EquipPotion(potions[2]);
+        EquipPotion(potions[3]);
         for (int i = 0; i < materials.Count; i++)
         {
             materials[i].amountStacked = 0;
@@ -125,32 +140,10 @@ public class Inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             currentPotion.UsePotion(Player.Instance);
-            potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
             ChangePotion();
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            foreach (Potion potion in potions)
-            {
-                potion.amountStacked++;
-            }
-            potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            bool result = Craft.Instance.CraftItem(currentPotion);
-            if (result)
-            {
-                Debug.Log("Crafted: " + currentPotion.itemName);
-                potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
-            }
-            else
-            {
-                Debug.Log("Not enough materials to craft: " + currentPotion.itemName);
-            }
         }
         if (meleeSelected)
         {
@@ -160,6 +153,7 @@ public class Inventory : MonoBehaviour
         {
             weaponText.text = $"Weapon: {currentRangedWeapon.itemName}";
         }
+        potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
     }
 
     public void AddItem(Item item)
@@ -214,6 +208,11 @@ public class Inventory : MonoBehaviour
         return false;
     }
 
+    public Materials GetMaterial(MaterialType type)
+    {
+        return materials.Find(m => m.materialType == type);
+    }
+
     public int GetMaterialAmount(MaterialType type)
     {
         Materials material = materials.Find(m => m.materialType == type);
@@ -235,18 +234,6 @@ public class Inventory : MonoBehaviour
         else if (weapon.weaponType == WeaponType.Ranged)
         {
             currentRangedWeapon = weapon;
-        }
-    }
-
-    public void UnequipWeapon(Weapon weapon)
-    {
-        if (weapon.weaponType == WeaponType.Melee)
-        {
-            currentMeleeWeapon = null;
-        }
-        else if (weapon.weaponType == WeaponType.Ranged)
-        {
-            currentRangedWeapon = null;
         }
     }
 
@@ -297,7 +284,25 @@ public class Inventory : MonoBehaviour
 
     public void EquipPotion(Potion potion)
     {
-        currentPotion = potion;
-        potionText.text = $"Potion: {currentPotion.itemName} ({currentPotion.amountStacked})";
+        if (potion.potionType == PotionType.Health)
+        {
+            currentHealthPotion = potion;
+        }
+        if (potion.potionType == PotionType.Mana)
+        {
+            currentManaPotion = potion;
+        }
+        if (potion.potionType == PotionType.Speed)
+        {
+            currentSpeedPotion = potion;
+        }
+        if (potion.potionType == PotionType.Strength)
+        {
+            currentStrengthPotion = potion;
+        }
+        if (currentPotion == null || (currentPotion != null && potion.potionType == currentPotion.potionType))
+        {
+            currentPotion = potion;
+        }
     }
 }
