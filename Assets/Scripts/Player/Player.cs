@@ -10,7 +10,7 @@ public class Player : LivingEntity
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI manaText;
     [SerializeField] private TextMeshProUGUI moneyText;
-    [SerializeField] private int exp = 0;
+    public int Exp { get; private set; } = 0;
     public float MoveSpeed { get; set; } = 4f;
     public int Mana { get; set; } = 100;
     public int Money { get; set; } = 100;
@@ -47,13 +47,13 @@ public class Player : LivingEntity
     void Update()
     {
         healthText.text = "HP: " + Health.ToString() + "%";
-        levelText.text = "Level: " + Level.ToString() + " (" + exp + "/" + (100 + (Level * 50)).ToString() + ")";
+        levelText.text = "Level: " + Level.ToString() + " (" + Exp + "/" + (100 + (Level * 50)).ToString() + ")";
         manaText.text = "Mana: " + Mana.ToString() + "/100";
         moneyText.text = "Money: " + Money.ToString() + "$";
-        if (exp >= 100 + (Level * 50))
+        if (Exp >= 100 + (Level * 50))
         {
             LevelUp();
-            exp = 0;
+            Exp = 0;
         }
     }
 
@@ -66,14 +66,15 @@ public class Player : LivingEntity
         AttackDamage = 5 + (Level * 2);
     }
 
-    private void GainExp(int expGain)
+    private void GainExp(int ExpGain)
     {
         if (Level == 5)
         {
             return;
         }
-        exp += expGain;
-        Mana += 10;
+        Exp += ExpGain;
+        if (Mana + 10 <= 100)
+            Mana += 10;
         killCount++;
 
         if (killCount == 1)

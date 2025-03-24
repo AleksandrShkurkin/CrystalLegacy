@@ -12,6 +12,7 @@ public class Shop : MonoBehaviour
     {
         foreach (ShopItem item in itemsInStock)
         {
+            item.amount = Random.Range(0, 15);
             ShopItem newItem = new ShopItem(item.item, item.price, 0);
             itemBasket.Add(newItem);
         }
@@ -79,17 +80,20 @@ public class Shop : MonoBehaviour
             Player.Instance.Money -= total;
             foreach (ShopItem item in itemBasket)
             {
-                switch (item.item)
+                if (item.amount > 0)
                 {
-                    case Weapon weapon:
-                    case Armor armor:
-                        Inventory.Instance.AddItem(item.item);
-                        break;
-                    default:
-                        Inventory.Instance.AddItems(item.item, item.amount);
-                        break;
+                    switch (item.item)
+                    {
+                        case Weapon weapon:
+                        case Armor armor:
+                            Inventory.Instance.AddItem(item.item);
+                            break;
+                        default:
+                            Inventory.Instance.AddItems(item.item, item.amount);
+                            break;
+                    }
+                    log += item.item.itemName + " (" + item.amount + "), ";
                 }
-                log += item.item.itemName + " (" + item.amount + "), ";
             }
             RemoveAllBasket();
             Debug.Log(log);

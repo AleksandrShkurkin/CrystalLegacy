@@ -36,7 +36,7 @@ public class Craft : MonoBehaviour
                 {
                     Inventory.Instance.RemoveMaterial(material.materialType, material.amountRequired);
                 }
-                Inventory.Instance.AddItem(item);
+                Inventory.Instance.AddItems(item, 1);
                 return true;
             }
         }
