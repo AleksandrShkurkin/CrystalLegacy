@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8b3cf1aae5b43a49bd4b1ffeab8535c, type: 3}
+  m_Name: CompanionMana
+  m_EditorClassIdentifier: 
+  companionName: Mage
+  icon: {fileID: 21300000, guid: 0490d28a1206e4c4cb4954be7b678980, type: 3}
+  companionPrefab: {fileID: 5449899943447208238, guid: e06a2e7de07b3ac4da32713250a123ab, type: 3}
+  effectType: 2
+  effectValue: 15

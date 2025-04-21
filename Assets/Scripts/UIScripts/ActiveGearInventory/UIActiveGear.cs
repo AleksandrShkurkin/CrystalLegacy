@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIActiveGear : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class UIActiveGear : MonoBehaviour
     public Button changeButton;
     public UIGearSlot selectedSlot;
     public GameObject changePanel;
+    public Image companionImage;
+    public Button nextCompanion;
+    public Button prevCompanion;
+    public TextMeshProUGUI compName;
+    public TextMeshProUGUI compDescription;
 
     void Awake()
     {
@@ -29,6 +35,8 @@ public class UIActiveGear : MonoBehaviour
     private void Start()
     {
         changeButton.onClick.AddListener(ChangeItem);
+        nextCompanion.onClick.AddListener(NextCompanion);
+        prevCompanion.onClick.AddListener(PrevCompanion);
     }
 
     public void UpdateGearUI()
@@ -49,6 +57,7 @@ public class UIActiveGear : MonoBehaviour
         FillWeaponPanel();
         FillArmorPanel();
         FillPotionsPanel();
+        ShowCompanion();
     }
 
     private void FillWeaponPanel()
@@ -110,6 +119,24 @@ public class UIActiveGear : MonoBehaviour
         strengthGearSlot.itemType.text = "Strength";
     }
 
+    private void ShowCompanion()
+    {
+        CompanionData currCompanion = Inventory.Instance.GetCompanionActive();
+        if (currCompanion != null)
+        {
+            companionImage.sprite = currCompanion.icon;
+            compName.text = currCompanion.companionName;
+            compDescription.text = "Damage: " + currCompanion.companionPrefab.GetComponent<Companion>().AttackDamage +
+            "\n" + currCompanion.effectType.ToString() + ": " + currCompanion.effectValue.ToString();
+        }
+        else
+        {
+            companionImage.sprite = null;
+            compName.text = "Name: none";
+            compDescription.text = "None";
+        }
+    }
+
     public void SelectSlot(UIGearSlot slot)
     {
         if (selectedSlot == slot)
@@ -126,5 +153,17 @@ public class UIActiveGear : MonoBehaviour
     {
         gameObject.SetActive(false);
         changePanel.SetActive(true);
+    }
+
+    private void NextCompanion()
+    {
+        Inventory.Instance.NextCompanion();
+        ShowCompanion();
+    }
+
+    private void PrevCompanion()
+    {
+        Inventory.Instance.PrevCompanion();
+        ShowCompanion();
     }
 }

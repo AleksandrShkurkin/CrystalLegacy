@@ -7,12 +7,15 @@ public class HealthPotion : Potion
 {
     public override void UsePotion(Player player)
     {
-        if (amountStacked > 0 && player.Health < 100 + (int)(100 * (player.Level / 10.0f)))
+        int maxHealth = 100 + (int)(100 * (player.Level / 10.0f)) +
+        (player.activeEffectType == EffectType.Health ? (int)player.activeEffectValue : 0);
+
+        if (amountStacked > 0 && player.Health < maxHealth)
         {
             player.Health += potionEffectValue;
-            if (player.Health > 100 + (int)(100 * (player.Level / 10.0f)))
+            if (player.Health > maxHealth)
             {
-                player.Health = 100 + (int)(100 * (player.Level / 10.0f));
+                player.Health = maxHealth;
             }
             amountStacked--;
         }

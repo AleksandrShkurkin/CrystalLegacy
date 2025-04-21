@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
     public List<Armor> armor = new List<Armor>();
     public List<Potion> potions = new List<Potion>();
     public List<Materials> materials = new List<Materials>();
+    public List<CompanionData> unlockedCompanions = new List<CompanionData>();
 
     private bool meleeSelected = true;
     private Weapon currentMeleeWeapon = null;
@@ -27,6 +28,8 @@ public class Inventory : MonoBehaviour
     private Potion currentSpeedPotion = null;
     private Potion currentStrengthPotion = null;
     private Potion currentPotion = null;
+    private int currentCompanionIndex = 0;
+    private GameObject? currentCompanionObject = null;
 
     public Weapon GetMeleeWeapon()
     {
@@ -83,6 +86,11 @@ public class Inventory : MonoBehaviour
         return meleeSelected;
     }
 
+    public CompanionData GetCompanionActive()
+    {
+        return unlockedCompanions[currentCompanionIndex];
+    }
+
     public void SwapWeapons()
     {
         meleeSelected = !meleeSelected;
@@ -99,6 +107,50 @@ public class Inventory : MonoBehaviour
         int currentIndex = potionSequence.IndexOf(currentPotion);
 
         currentPotion = potionSequence[(currentIndex + 1) % potionSequence.Count];
+    }
+
+    public void NextCompanion()
+    {
+        if (unlockedCompanions.Count == 1) return;
+
+        if (currentCompanionObject != null)
+        {
+            Destroy(currentCompanionObject);
+        }
+
+        currentCompanionIndex = (currentCompanionIndex + 1) % unlockedCompanions.Count;
+
+        if (unlockedCompanions[currentCompanionIndex] != null)
+        {
+            currentCompanionObject = Instantiate(unlockedCompanions[currentCompanionIndex].companionPrefab, transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
+            Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
+        }
+        else
+        {
+            Player.Instance.ResetCompanionEffect();
+        }
+    }
+
+    public void PrevCompanion()
+    {
+        if (unlockedCompanions.Count == 1) return;
+
+        if (currentCompanionObject != null)
+        {
+            Destroy(currentCompanionObject);
+        }
+
+        currentCompanionIndex = (currentCompanionIndex - 1 + unlockedCompanions.Count) % unlockedCompanions.Count;
+
+        if (unlockedCompanions[currentCompanionIndex] != null)
+        {
+            currentCompanionObject = Instantiate(unlockedCompanions[currentCompanionIndex].companionPrefab, transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
+            Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
+        }
+        else
+        {
+            Player.Instance.ResetCompanionEffect();
+        }
     }
 
     public void Awake()
@@ -133,6 +185,7 @@ public class Inventory : MonoBehaviour
         {
             materials[i].amountStacked = 0;
         }
+        unlockedCompanions.Insert(0, null);
     }
 
     public void Update()

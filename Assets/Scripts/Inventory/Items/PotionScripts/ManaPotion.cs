@@ -7,12 +7,13 @@ public class ManaPotion : Potion
 {
     public override void UsePotion(Player player)
     {
-        if (amountStacked > 0 && player.Mana < 100)
+        int maxMana = 100 + (player.activeEffectType == EffectType.Mana ? (int)player.activeEffectValue : 0);
+        if (amountStacked > 0 && player.Mana < maxMana)
         {
             player.Mana += potionEffectValue;
-            if (player.Mana > 100)
+            if (player.Mana > maxMana)
             {
-                player.Mana = 100;
+                player.Mana = maxMana;
             }
             amountStacked--;
         }

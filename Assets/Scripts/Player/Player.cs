@@ -15,8 +15,13 @@ public class Player : LivingEntity
     public int Mana { get; set; } = 100;
     public int Money { get; set; } = 100;
     private int killCount = 0;
-    public GameObject companion;
+    public CompanionData companion1;
+    public CompanionData companion2;
+    public CompanionData companion3;
+    public CompanionData companion4;
     public List<Weapon> weapons;
+    public EffectType? activeEffectType = null;
+    public int activeEffectValue = 0;
 
     private void OnEnable()
     {
@@ -60,6 +65,10 @@ public class Player : LivingEntity
     private void LevelUp()
     {
         AchievementManager.Instance.UnlockAchievement("Nothing is clear, but it's very interesting");
+        if (Level == 0)
+        {
+            Inventory.Instance.unlockedCompanions.Add(companion3);
+        }
         Level += 1;
         Health = 100 + (int)(100 * (Level / 10.0f));
         Defense = 1.0f + (Level / 10.0f);
@@ -80,11 +89,13 @@ public class Player : LivingEntity
         if (killCount == 1)
         {
             AchievementManager.Instance.UnlockAchievement("First Blood");
+            Inventory.Instance.unlockedCompanions.Add(companion1);
         }
         if (killCount == 10)
         {
             AchievementManager.Instance.UnlockAchievement("Moral superiority");
-            Instantiate(companion, transform.position + (Vector3)(Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
+            Inventory.Instance.unlockedCompanions.Add(companion2);
+            
         }
         if (killCount == 50)
         {
@@ -93,6 +104,7 @@ public class Player : LivingEntity
         if (Health < 10)
         {
             AchievementManager.Instance.UnlockAchievement("Dead or Alive?");
+            Inventory.Instance.unlockedCompanions.Add(companion4);
         }
     }
 
@@ -107,5 +119,17 @@ public class Player : LivingEntity
             Application.Quit();
 #endif
         }
+    }
+
+    public void ApplyCompanionEffect(CompanionData companionData)
+    {
+        activeEffectType = companionData.effectType;
+        activeEffectValue = companionData.effectValue;
+    }
+
+    public void ResetCompanionEffect()
+    {
+        activeEffectType = null;
+        activeEffectValue = 0;
     }
 }

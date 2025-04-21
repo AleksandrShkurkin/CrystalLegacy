@@ -62,6 +62,6 @@ public class PlayerAttack : MonoBehaviour
     {
         canAttack = false;
         hitboxArea.SetActive(true);
-        hitboxArea.GetComponent<MeleeAttack>().SetDamage(meleeDamage + Player.Instance.AttackDamage);
+        hitboxArea.GetComponent<MeleeAttack>().SetDamage(meleeDamage + Player.Instance.AttackDamage + (Player.Instance.activeEffectType == EffectType.Damage ? (int)Player.Instance.activeEffectValue : 0));
     }
 }
