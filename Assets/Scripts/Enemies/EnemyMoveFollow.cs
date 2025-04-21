@@ -82,9 +82,9 @@ public class EnemyMoveFollow : MonoBehaviour
     private Transform player;
     protected bool isAggressive = false;
 
-    public float detectionRange = 5f; // Raycast range
-    public float detectionDistance = 10f; // Distance to detect player
-    public LayerMask obstacleMask; // Assign "Obstacle" layer in Inspector
+    public float detectionRange = 5f;
+    public float detectionDistance = 10f;
+    public LayerMask obstacleMask;
 
     void Start()
     {
@@ -101,16 +101,23 @@ public class EnemyMoveFollow : MonoBehaviour
 
             if (distanceToPlayer <= detectionDistance)
             {
-                // Check for obstacles and player detection
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionRange, obstacleMask);
                 Debug.DrawRay(transform.position, direction * detectionRange, Color.red);
 
-                if (hit.collider == null) // No obstacle, move directly to player
+                Vector3 forwardDirection = transform.right;
+                Vector3 offset = transform.up * 0.5f;
+                RaycastHit2D hitLeft = Physics2D.Raycast(transform.position + offset, forwardDirection, 1.5f, obstacleMask);
+                Debug.DrawRay(transform.position + offset, forwardDirection * 1.5f, Color.blue);
+
+                RaycastHit2D hitRight = Physics2D.Raycast(transform.position + (-offset), forwardDirection, 1.5f, obstacleMask);
+                Debug.DrawRay(transform.position + (-offset), forwardDirection * 1.5f, Color.blue);
+
+                if (hit.collider == null && hitLeft.collider == null && hitRight.collider == null)
                 {
                     movement = direction;
                     isAggressive = true;
                 }
-                else // Obstacle detected, find a different path
+                else
                 {
                     movement = FindAlternativePath(direction);
                     isAggressive = movement != Vector2.zero;
@@ -156,9 +163,9 @@ public class EnemyMoveFollow : MonoBehaviour
     Vector2 FindAlternativePath(Vector2 originalDirection)
     {
         Vector2[] possibleDirections = {
-            new Vector2(-originalDirection.y, originalDirection.x), // Left
-            new Vector2(originalDirection.y, -originalDirection.x), // Right
-            -originalDirection // Backward
+            new Vector2(-originalDirection.y, originalDirection.x),
+            new Vector2(originalDirection.y, -originalDirection.x),
+            -originalDirection
         };
 
         foreach (Vector2 dir in possibleDirections)
@@ -170,6 +177,6 @@ public class EnemyMoveFollow : MonoBehaviour
             }
         }
 
-        return Vector2.zero; // No available paths, stop moving
+        return Vector2.zero;
     }
 }
