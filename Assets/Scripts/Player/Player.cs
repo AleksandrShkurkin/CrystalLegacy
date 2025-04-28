@@ -16,7 +16,6 @@ public class Player : LivingEntity
     public int Money { get; set; } = 100;
     private int killCount = 0;
     public CompanionData companion1;
-    public CompanionData companion2;
     public CompanionData companion3;
     public CompanionData companion4;
     public List<Weapon> weapons;
@@ -93,9 +92,7 @@ public class Player : LivingEntity
         }
         if (killCount == 10)
         {
-            AchievementManager.Instance.UnlockAchievement("Moral superiority");
-            Inventory.Instance.unlockedCompanions.Add(companion2);
-            
+            AchievementManager.Instance.UnlockAchievement("Moral superiority");  
         }
         if (killCount == 50)
         {
