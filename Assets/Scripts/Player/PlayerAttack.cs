@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -8,14 +7,18 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        weapon = GetComponentInChildren<WeaponSword>();
+        // Sword Ч окремий обТЇкт у сцен≥
+        weapon = FindObjectOfType<WeaponSword>();
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && weapon.canAttack)
+        if (Input.GetButtonDown("Fire1") && weapon != null && weapon.canAttack)
         {
+            int direction = GetComponent<Animator>().GetInteger("Direction");
+            weapon.SetDirection(direction); // новий р€док
             StartCoroutine(weapon.Attack());
         }
     }
+
 }

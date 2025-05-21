@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class WeaponSword : Weapon
 {
+    private Animator animator;
+    private Transform playerTransform;
+    private SpriteRenderer spriteRenderer;
+    private BoxCollider2D collider;
+    private int direction; // 0=Down, 1=Up, 2=Left, 3=Right
+
     void Start()
     {
         weaponName = "Sword";
@@ -11,51 +17,92 @@ public class WeaponSword : Weapon
         attackCooldown = 0.5f;
         attackDuration = 0.5f;
         canAttack = true;
-        hitbox = gameObject;
+
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        collider = GetComponent<BoxCollider2D>();
+        playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+
+        spriteRenderer.enabled = false;
+        collider.enabled = false;
+    }
+
+    public void SetDirection(int dir)
+    {
+        direction = dir;
     }
 
     public override IEnumerator Attack()
     {
         canAttack = false;
-        hitbox.GetComponent<Collider2D>().enabled = true;
 
-        yield return new WaitForSeconds(attackDuration/2);
+        // Позиціонування та поворот меча відносно гравця
+        Vector3 offset = Vector3.zero;
+        float rotationZ = 0f;
 
-        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(hitbox.transform.position, hitbox.GetComponent<BoxCollider2D>().size, 0f, LayerMask.GetMask("Enemy"));
-        foreach (Collider2D enemy in hitEnemies)
+        switch (direction)
         {
-            enemy.GetComponent<Enemy>().RecieveDamage(damage);
+            case 0: // вниз
+                offset = new Vector3(0f, -0.5f, 0f);
+                rotationZ = -90f;
+                break;
+            case 1: // вгору
+                offset = new Vector3(0f, 0.5f, 0f);
+                rotationZ = 90f;
+                break;
+            case 2: // вліво
+                offset = new Vector3(-0.5f, 0f, 0f);
+                rotationZ = 180f;
+                break;
+            case 3: // вправо
+                offset = new Vector3(0.5f, 0f, 0f);
+                rotationZ = 0f;
+                break;
         }
 
-        yield return new WaitForSeconds(attackDuration/2);
+        transform.position = playerTransform.position + offset;
+        transform.rotation = Quaternion.Euler(0, 0, rotationZ);
 
-        hitbox.GetComponent<Collider2D>().enabled = false;
+        // Увімкнення меча
+        spriteRenderer.enabled = true;
+        collider.enabled = true;
 
-        yield return new WaitForSeconds(attackCooldown);
-
-        canAttack = true;
-    }
-
-    /* Damage at the start and the end of the attack
-    Collider2D[] hitEnemiesFirstCheck = Physics2D.OverlapBoxAll(hitbox.transform.position, hitbox.GetComponent<BoxCollider2D>().size, 0f, LayerMask.GetMask("Enemy"));
-        HashSet<Collider2D> hitEnemiesSet = new HashSet<Collider2D>(hitEnemiesFirstCheck);
-
-        foreach (Collider2D enemy in hitEnemiesFirstCheck)
+        if (animator != null)
         {
-            enemy.GetComponent<Enemy>().RecieveDamage(damage);
+            animator.Play("SwordAttack", 0, 0f); // Програти з початку
         }
 
-        yield return new WaitForSeconds(attackDuration);
-
-        hitbox.GetComponent<Collider2D>().enabled = false;
-
-        Collider2D[] hitEnemiesSecondCheck = Physics2D.OverlapBoxAll(hitbox.transform.position, hitbox.GetComponent<BoxCollider2D>().size, 0f, LayerMask.GetMask("Enemy"));
-        foreach (Collider2D enemy in hitEnemiesSecondCheck)
+        // Удар перший
+        HashSet<Collider2D> hitSet = new HashSet<Collider2D>();
+        Collider2D[] firstHits = Physics2D.OverlapBoxAll(collider.bounds.center, collider.bounds.size, 0f, LayerMask.GetMask("Enemy"));
+        foreach (Collider2D enemy in firstHits)
         {
-            if (!hitEnemiesSet.Contains(enemy))
+            if (enemy.TryGetComponent(out Enemy e))
             {
-                enemy.GetComponent<Enemy>().RecieveDamage(damage);
+                e.RecieveDamage(damage);
+                hitSet.Add(enemy);
             }
         }
-    */
+
+        yield return new WaitForSeconds(attackDuration / 2f);
+
+        // Удар другий
+        Collider2D[] secondHits = Physics2D.OverlapBoxAll(collider.bounds.center, collider.bounds.size, 0f, LayerMask.GetMask("Enemy"));
+        foreach (Collider2D enemy in secondHits)
+        {
+            if (!hitSet.Contains(enemy) && enemy.TryGetComponent(out Enemy e))
+            {
+                e.RecieveDamage(damage);
+            }
+        }
+
+        yield return new WaitForSeconds(attackDuration / 2f);
+
+        // Вимикаємо меч
+        spriteRenderer.enabled = false;
+        collider.enabled = false;
+
+        yield return new WaitForSeconds(attackCooldown);
+        canAttack = true;
+    }
 }

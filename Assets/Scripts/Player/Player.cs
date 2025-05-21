@@ -5,8 +5,8 @@ public class Player : LivingEntity
 {
     public TextMeshProUGUI healthText;
 
-    private float lastDamageTime = -999f; // час останнього урону
-    private float damageCooldown = 0.8f;   // кулдаун між уронами
+    private float lastDamageTime = -999f;
+    private float damageCooldown = 0.8f;
 
     public void Start()
     {
@@ -23,7 +23,7 @@ public class Player : LivingEntity
     public override void RecieveDamage(int damage)
     {
         if (Time.time - lastDamageTime < damageCooldown)
-            return; // ще не минув кулдаун
+            return;
 
         lastDamageTime = Time.time;
 
