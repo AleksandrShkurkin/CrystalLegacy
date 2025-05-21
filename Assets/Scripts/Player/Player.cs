@@ -4,6 +4,10 @@ using TMPro;
 public class Player : LivingEntity
 {
     public TextMeshProUGUI healthText;
+
+    private float lastDamageTime = -999f; // час останнього урону
+    private float damageCooldown = 0.8f;   // кулдаун між уронами
+
     public void Start()
     {
         health = 100;
@@ -15,17 +19,22 @@ public class Player : LivingEntity
     {
         healthText.text = "HP: " + health.ToString();
     }
-    
+
     public override void RecieveDamage(int damage)
     {
+        if (Time.time - lastDamageTime < damageCooldown)
+            return; // ще не минув кулдаун
+
+        lastDamageTime = Time.time;
+
         health -= Mathf.RoundToInt(damage / defense);
         if (health <= 0)
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
-            #else
+#else
             Application.Quit();
-            #endif
+#endif
         }
     }
 }

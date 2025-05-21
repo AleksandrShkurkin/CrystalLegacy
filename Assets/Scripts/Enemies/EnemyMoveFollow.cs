@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyMoveFollow : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator animator;
     public float moveSpeed = 2f;
+
     private Vector2 movement;
     private Transform player;
     protected bool isAggresive = false;
@@ -13,6 +15,7 @@ public class EnemyMoveFollow : MonoBehaviour
     void Start()
     {
         rb = GetComponentInParent<Enemy>().GetComponent<Rigidbody2D>();
+        animator = GetComponentInParent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -23,6 +26,16 @@ public class EnemyMoveFollow : MonoBehaviour
             Vector3 direction = player.position - transform.position;
             direction.Normalize();
             movement = direction;
+
+            if (isAggresive)
+            {
+                RotateCharacter(movement);
+            }
+        }
+
+        if (animator != null)
+        {
+            animator.SetBool("IsWalking", isAggresive);
         }
     }
 
@@ -31,7 +44,6 @@ public class EnemyMoveFollow : MonoBehaviour
         if (isAggresive)
         {
             MoveCharacter(movement);
-            RotateCharacter(movement);
         }
     }
 
@@ -42,13 +54,15 @@ public class EnemyMoveFollow : MonoBehaviour
 
     void RotateCharacter(Vector2 movement)
     {
-        if (Mathf.Abs(movement.x) >= Mathf.Abs(movement.y))
+        if (animator == null) return;
+
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
         {
-            rb.transform.rotation = Quaternion.Euler(0, 0, movement.x > 0 ? 0 : 180);
+            animator.SetInteger("Direction", movement.x > 0 ? 3 : 2); // 3 = Right, 2 = Left
         }
         else
         {
-            rb.transform.rotation = Quaternion.Euler(0, 0, movement.y > 0 ? 90 : -90);
+            animator.SetInteger("Direction", movement.y > 0 ? 1 : 0); // 1 = Up, 0 = Down
         }
     }
 
