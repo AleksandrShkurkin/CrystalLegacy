@@ -1,132 +1,140 @@
-using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 
-public class Player : LivingEntity
+namespace Player
 {
-    public static Player Instance {get; private set;}
-
-    [SerializeField] private TextMeshProUGUI healthText;
-    [SerializeField] private TextMeshProUGUI levelText;
-    [SerializeField] private TextMeshProUGUI manaText;
-    [SerializeField] private TextMeshProUGUI moneyText;
-    public int Exp { get; private set; } = 0;
-    public float MoveSpeed { get; set; } = 4f;
-    public int Mana { get; set; } = 100;
-    public int Money { get; set; } = 100;
-    private int killCount = 0;
-    public CompanionData companion1;
-    public CompanionData companion3;
-    public CompanionData companion4;
-    public List<Weapon> weapons;
-    public EffectType? activeEffectType = null;
-    public int activeEffectValue = 0;
-
-    private void OnEnable()
+    public class Player : LivingEntity
     {
-        Enemy.OnEnemyDefeated += GainExp;
-    }
+        public static Player Instance {get; private set;}
 
-    private void OnDisable()
-    {
-        Enemy.OnEnemyDefeated -= GainExp;
-    }
+        public TextMeshProUGUI healthText;
+        public TextMeshProUGUI levelText;
+        public TextMeshProUGUI manaText;
+        public TextMeshProUGUI moneyText;
+        public int Exp { get; private set; }
+        public float MoveSpeed { get; set; } = 4f;
+        public int Mana { get; set; } = 100;
+        public int Money { get; set; } = 100;
+        private int _killCount;
+        private float _lastDamageTime = 0f;
+        private const float DamageCooldown = 0.8f;
+        public CompanionData companion1;
+        public CompanionData companion3;
+        public CompanionData companion4;
+        public List<Weapon> weapons;
+        public EffectType? ActiveEffectType;
+        public int activeEffectValue;
 
-    public void Awake()
-    {
-        if (Instance == null)
+        private void OnEnable()
         {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            Enemy.OnEnemyDefeated += GainExp;
         }
 
-        Level = 0;
-        Health = 100 + (int)(100 * (Level / 10.0f));
-        Defense = 1.0f + (Level / 10.0f);
-        AttackDamage = 5 + (Level * 2);
-    }
-    void Update()
-    {
-        healthText.text = "HP: " + Health.ToString() + "%";
-        levelText.text = "Level: " + Level.ToString() + " (" + Exp + "/" + (100 + (Level * 50)).ToString() + ")";
-        manaText.text = "Mana: " + Mana.ToString() + "/100";
-        moneyText.text = "Money: " + Money.ToString() + "$";
-        if (Exp >= 100 + (Level * 50))
+        private void OnDisable()
         {
+            Enemy.OnEnemyDefeated -= GainExp;
+        }
+
+        public void Awake()
+        {
+            if (!Instance)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+            Level = 0;
+            Health = 100 + (int)(100 * (Level / 10.0f));
+            Defense = 1.0f + (Level / 10.0f);
+            AttackDamage = 5 + (Level * 2);
+        }
+        
+        private void Update()
+        {
+            healthText.text = "HP: " + Health.ToString() + "%";
+            levelText.text = "Level: " + Level.ToString() + " (" + Exp + "/" + (100 + (Level * 50)).ToString() + ")";
+            manaText.text = "Mana: " + Mana.ToString() + "/100";
+            moneyText.text = "Money: " + Money.ToString() + "$";
+            if (Exp < 100 + (Level * 50)) return;
             LevelUp();
             Exp = 0;
         }
-    }
 
-    private void LevelUp()
-    {
-        AchievementManager.Instance.UnlockAchievement("Nothing is clear, but it's very interesting");
-        if (Level == 0)
+        private void LevelUp()
         {
-            Inventory.Instance.unlockedCompanions.Add(companion3);
+            AchievementManager.Instance.UnlockAchievement("Nothing is clear, but it's very interesting");
+            if (Level == 0)
+            {
+                Inventory.Instance.unlockedCompanions.Add(companion3);
+            }
+            Level += 1;
+            Health = 100 + (int)(100 * (Level / 10.0f));
+            Defense = 1.0f + (Level / 10.0f);
+            AttackDamage = 5 + (Level * 2);
         }
-        Level += 1;
-        Health = 100 + (int)(100 * (Level / 10.0f));
-        Defense = 1.0f + (Level / 10.0f);
-        AttackDamage = 5 + (Level * 2);
-    }
 
-    private void GainExp(int ExpGain)
-    {
-        if (Level == 5)
+        private void GainExp(int expGain)
         {
-            return;
-        }
-        Exp += ExpGain;
-        if (Mana + 10 <= 100)
-            Mana += 10;
-        killCount++;
+            if (Level == 5)
+            {
+                return;
+            }
+            Exp += expGain;
+            if (Mana + 10 <= 100)
+                Mana += 10;
+            _killCount++;
 
-        if (killCount == 1)
-        {
-            AchievementManager.Instance.UnlockAchievement("First Blood");
-            Inventory.Instance.unlockedCompanions.Add(companion1);
-        }
-        if (killCount == 10)
-        {
-            AchievementManager.Instance.UnlockAchievement("Moral superiority");  
-        }
-        if (killCount == 50)
-        {
-            AchievementManager.Instance.UnlockAchievement("Battle Veteran");
-        }
-        if (Health < 10)
-        {
+            switch (_killCount)
+            {
+                case 1:
+                    AchievementManager.Instance.UnlockAchievement("First Blood");
+                    Inventory.Instance.unlockedCompanions.Add(companion1);
+                    break;
+                case 10:
+                    AchievementManager.Instance.UnlockAchievement("Moral superiority");
+                    break;
+                case 50:
+                    AchievementManager.Instance.UnlockAchievement("Battle Veteran");
+                    break;
+            }
+
+            if (Health >= 10) return;
             AchievementManager.Instance.UnlockAchievement("Dead or Alive?");
             Inventory.Instance.unlockedCompanions.Add(companion4);
         }
-    }
 
-    public override void RecieveDamage(int damage)
-    {
-        Health -= Mathf.RoundToInt(damage / Defense);
-        if (Health <= 0)
+        public override void RecieveDamage(int damage)
         {
+            if (Time.time - _lastDamageTime < DamageCooldown) return;
+            
+            _lastDamageTime = Time.time;
+            
+            Health -= Mathf.RoundToInt(damage / Defense);
+            if (Health <= 0)
+            {
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+                UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
+            }
         }
-    }
 
-    public void ApplyCompanionEffect(CompanionData companionData)
-    {
-        activeEffectType = companionData.effectType;
-        activeEffectValue = companionData.effectValue;
-    }
+        public void ApplyCompanionEffect(CompanionData companionData)
+        {
+            ActiveEffectType = companionData.effectType;
+            activeEffectValue = companionData.effectValue;
+        }
 
-    public void ResetCompanionEffect()
-    {
-        activeEffectType = null;
-        activeEffectValue = 0;
+        public void ResetCompanionEffect()
+        {
+            ActiveEffectType = null;
+            activeEffectValue = 0;
+        }
     }
 }

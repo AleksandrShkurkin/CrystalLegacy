@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpeedPotion : Potion
 {
     private CooldownManager speedCooldown = new CooldownManager(5.1f);
-    public override void UsePotion(Player player)
+    public override void UsePotion(Player.Player player)
     {
         if (amountStacked > 0 && speedCooldown.IsCooldownFinished(Time.time))
         {
@@ -17,7 +17,7 @@ public class SpeedPotion : Potion
         }
     }
 
-    private IEnumerator ResetSpeed(Player player)
+    private IEnumerator ResetSpeed(Player.Player player)
     {
         yield return new WaitForSeconds(5f);
         player.MoveSpeed -= potionEffectValue;

@@ -1,45 +1,45 @@
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Craft : MonoBehaviour
+namespace Craft
 {
-    public static Craft Instance { get; private set; }
-    public List<Recipe> recipies = new List<Recipe>();
-
-    private void Awake()
+    public class Craft : MonoBehaviour
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+        public static Craft Instance { get; private set; }
+        public List<Recipe> recipies = new List<Recipe>();
 
-    public bool CraftItem(Item item)
-    {
-        foreach (Recipe recipe in recipies)
+        private void Awake()
         {
-            if (recipe.itemCrafted == item)
+            if (!Instance)
             {
-                foreach (MaterialRequirement material in recipe.materialsRequired)
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public bool CraftItem(Item item)
+        {
+            foreach (var recipe in recipies.Where(recipe => recipe.itemCrafted == item))
+            {
+                if (recipe.materialsRequired.Any(material =>
+                        !Inventory.Instance.CheckAmount(material.materialType, material.amountRequired)))
                 {
-                    if (!Inventory.Instance.CheckAmount(material.materialType, material.amountRequired))
-                    {
-                        return false;
-                    }
+                    return false;
                 }
-                foreach (MaterialRequirement material in recipe.materialsRequired)
+                foreach (var material in recipe.materialsRequired)
                 {
                     Inventory.Instance.RemoveMaterial(material.materialType, material.amountRequired);
                 }
                 Inventory.Instance.AddItems(item, 1);
                 return true;
             }
+
+            return false;
         }
-        return false;
     }
 }

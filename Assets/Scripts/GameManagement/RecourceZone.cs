@@ -1,49 +1,40 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
-public class RecourceZone : MonoBehaviour
+namespace GameManagement
 {
-    public MaterialType materialType;
-    private CooldownManager cooldownManager = new CooldownManager(3f);
-    private Coroutine collectionCoroutine;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class RecourceZone : MonoBehaviour
     {
-        if (other.CompareTag("Player"))
+        public MaterialType materialType;
+        private readonly CooldownManager _cooldownManager = new CooldownManager(3f);
+        private Coroutine _collectionCoroutine;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (collectionCoroutine == null)
-            {
-                collectionCoroutine = StartCoroutine(CollectResources());
-            }
+            if (!other.CompareTag("Player")) return;
+            _collectionCoroutine ??= StartCoroutine(CollectResources());
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerExit2D(Collider2D other)
         {
-            if (collectionCoroutine != null)
-            {
-                StopCoroutine(collectionCoroutine);
-                collectionCoroutine = null;
-            }
+            if (!other.CompareTag("Player")) return;
+            if (_collectionCoroutine == null) return;
+            StopCoroutine(_collectionCoroutine);
+            _collectionCoroutine = null;
         }
-    }
 
-    private IEnumerator CollectResources()
-    {
-        while (true)
+        private IEnumerator CollectResources()
         {
-            if (cooldownManager.IsCooldownFinished(Time.time))
+            while (true)
             {
-                cooldownManager.InitiateCooldown(Time.time);
-                Inventory.Instance.AddMaterial(materialType, 1);
-                Debug.Log("Added " + materialType.ToString() + ": 1, Total: " + Inventory.Instance.GetMaterialAmount(materialType));
-            }
+                if (_cooldownManager.IsCooldownFinished(Time.time))
+                {
+                    _cooldownManager.InitiateCooldown(Time.time);
+                    Inventory.Instance.AddMaterial(materialType, 1);
+                }
             
-            yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 }

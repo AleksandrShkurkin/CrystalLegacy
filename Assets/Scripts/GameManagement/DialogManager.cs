@@ -5,17 +5,17 @@ using TMPro;
 
 public class DialogManager : MonoBehaviour
 {
-    public static DialogManager Instance;
+    public static DialogManager Instance = null;
 
     public TextMeshProUGUI dialogText;
     public GameObject playerUI;
     public GameObject dialogUI;
 
     private Coroutine currentDialogCoroutine;
-
-    void Awake()
+    
+    private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (!Instance) Instance = this;
     }
 
     public void StartDialog(string[] dialogLines)

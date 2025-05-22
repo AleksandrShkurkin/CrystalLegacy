@@ -278,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28dfa8ef2bdd5894d954b7740f90f442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerInRange: 0
 --- !u!1 &2708497851863291690
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +444,7 @@ GameObject:
   - component: {fileID: -7755857181009013302}
   m_Layer: 9
   m_Name: CompanionMana
-  m_TagString: Enemy
+  m_TagString: Companion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

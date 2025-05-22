@@ -5,10 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Health Potion Lvl", menuName = "Items/Potions/Health" )]
 public class HealthPotion : Potion
 {
-    public override void UsePotion(Player player)
+    public override void UsePotion(Player.Player player)
     {
         int maxHealth = 100 + (int)(100 * (player.Level / 10.0f)) +
-        (player.activeEffectType == EffectType.Health ? (int)player.activeEffectValue : 0);
+        (player.ActiveEffectType == EffectType.Health ? (int)player.activeEffectValue : 0);
 
         if (amountStacked > 0 && player.Health < maxHealth)
         {

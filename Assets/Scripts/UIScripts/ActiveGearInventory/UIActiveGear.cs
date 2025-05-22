@@ -126,7 +126,7 @@ public class UIActiveGear : MonoBehaviour
         {
             companionImage.sprite = currCompanion.icon;
             compName.text = currCompanion.companionName;
-            compDescription.text = "Damage: " + currCompanion.companionPrefab.GetComponent<Companion>().AttackDamage +
+            compDescription.text = "Damage: " + currCompanion.companionPrefab.GetComponent<Companion.Companion>().AttackDamage +
             "\n" + currCompanion.effectType.ToString() + ": " + currCompanion.effectValue.ToString();
         }
         else

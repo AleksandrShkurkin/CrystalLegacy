@@ -11,6 +11,7 @@ public class ShopTrigger : MonoBehaviour
     private void Start()
     {
         currentShop = GetComponent<Shop>();
+        shopUI = UIManager.Instance.menus[4];
     }
 
     private void OnTriggerEnter2D(Collider2D other)

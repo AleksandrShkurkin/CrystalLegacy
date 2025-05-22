@@ -35,7 +35,7 @@ public class UICraft : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        foreach (Recipe recipe in Craft.Instance.recipies)
+        foreach (Recipe recipe in Craft.Craft.Instance.recipies)
         {
             GameObject slotObj = Instantiate(craftSlotPrefab, craftPanel);
             UICraftSlot slot = slotObj.GetComponent<UICraftSlot>();
@@ -57,7 +57,7 @@ public class UICraft : MonoBehaviour
 
     private void CraftTry()
     {
-        bool success = Craft.Instance.CraftItem(selectedSlot.recipe.itemCrafted);
+        bool success = Craft.Craft.Instance.CraftItem(selectedSlot.recipe.itemCrafted);
         if (!success)
         {
             Debug.Log("Not enough materials in inventory!");

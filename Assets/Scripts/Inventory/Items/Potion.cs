@@ -10,5 +10,5 @@ public abstract class Potion : Item
     public int potionEffectValue;
     public int amountStacked;
 
-    public abstract void UsePotion(Player player);
+    public abstract void UsePotion(Player.Player player);
 }

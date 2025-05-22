@@ -127,7 +127,7 @@ public class QuestManager : MonoBehaviour
                 Inventory.Instance.unlockedCompanions.Add(quest.reward.companion);
                 break;
             case RewardType.Money:
-                Player.Instance.Money += quest.reward.amount;
+                Player.Player.Instance.Money += quest.reward.amount;
                 break;
         }
     }

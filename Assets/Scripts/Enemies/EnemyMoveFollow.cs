@@ -70,6 +70,8 @@
 // }
 
 //second attempt
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -77,6 +79,9 @@ using UnityEngine;
 public class EnemyMoveFollow : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private GameObject visualsContainer;
     public float moveSpeed = 2f;
     private Vector2 movement;
     private Transform player;
@@ -86,33 +91,63 @@ public class EnemyMoveFollow : MonoBehaviour
     public float detectionDistance = 10f;
     public LayerMask obstacleMask;
 
-    void Start()
+    public Animator Animator => animator;
+
+    private void Awake()
+    {
+        visualsContainer = new GameObject("VisualContainer");
+        visualsContainer.transform.SetParent(transform);
+        visualsContainer.transform.localPosition = Vector3.zero;
+        visualsContainer.transform.localRotation = Quaternion.identity;
+        visualsContainer.transform.localScale = Vector3.one;
+        
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer)
+        {
+            var newSpriteRenderer = visualsContainer.AddComponent<SpriteRenderer>();
+            newSpriteRenderer.sprite = spriteRenderer.sprite;
+            newSpriteRenderer.sortingOrder = spriteRenderer.sortingOrder;
+            Destroy(spriteRenderer);
+            spriteRenderer = newSpriteRenderer;
+        }
+        
+        var oldAnimator = GetComponent<Animator>();
+        if (oldAnimator)
+        {
+            animator = visualsContainer.AddComponent<Animator>();
+            animator.runtimeAnimatorController = oldAnimator.runtimeAnimatorController;
+            Destroy(oldAnimator);
+        }
+    }
+
+    private void Start()
     {
         rb = GetComponentInParent<Enemy>().GetComponent<Rigidbody2D>();
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Update()
+    private void Update()
     {
-        if (player != null)
+        if (player)
         {
-            Vector3 direction = (player.position - transform.position).normalized;
-            float distanceToPlayer = Vector3.Distance(player.position, transform.position);
+            var direction = (player.position - transform.position).normalized;
+            var distanceToPlayer = Vector3.Distance(player.position, transform.position);
 
             if (distanceToPlayer <= detectionDistance)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, detectionRange, obstacleMask);
+                var hit = Physics2D.Raycast(transform.position, direction, detectionRange, obstacleMask);
                 Debug.DrawRay(transform.position, direction * detectionRange, Color.red);
 
-                Vector3 forwardDirection = transform.right;
-                Vector3 offset = transform.up * 0.5f;
-                RaycastHit2D hitLeft = Physics2D.Raycast(transform.position + offset, forwardDirection, 1.5f, obstacleMask);
+                var forwardDirection = transform.right;
+                var offset = transform.up * 0.5f;
+                var hitLeft = Physics2D.Raycast(transform.position + offset, forwardDirection, 1.5f, obstacleMask);
                 Debug.DrawRay(transform.position + offset, forwardDirection * 1.5f, Color.blue);
 
-                RaycastHit2D hitRight = Physics2D.Raycast(transform.position + (-offset), forwardDirection, 1.5f, obstacleMask);
+                var hitRight = Physics2D.Raycast(transform.position + (-offset), forwardDirection, 1.5f, obstacleMask);
                 Debug.DrawRay(transform.position + (-offset), forwardDirection * 1.5f, Color.blue);
 
-                if (hit.collider == null && hitLeft.collider == null && hitRight.collider == null)
+                if (!hit.collider && !hitLeft.collider && !hitRight.collider)
                 {
                     movement = direction;
                     isAggressive = true;
@@ -132,23 +167,32 @@ public class EnemyMoveFollow : MonoBehaviour
         {
             isAggressive = false;
         }
-    }
-
-    void FixedUpdate()
-    {
-        if (isAggressive)
+        
+        if (animator)
         {
-            MoveCharacter(movement);
-            RotateCharacter(movement);
+            animator.SetBool("IsWalking", isAggressive);
         }
     }
 
-    void MoveCharacter(Vector2 direction)
+    private void LateUpdate()
     {
-        rb.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.fixedDeltaTime));
+        visualsContainer.transform.rotation = Quaternion.identity;
     }
 
-    void RotateCharacter(Vector2 movement)
+    
+    private void FixedUpdate()
+    {
+        if (!isAggressive) return;
+        MoveCharacter(movement);
+        RotateCharacter(movement);
+    }
+
+    private void MoveCharacter(Vector2 direction)
+    {
+        rb.MovePosition((Vector2)transform.position + (direction * (moveSpeed * Time.fixedDeltaTime)));
+    }
+
+    private void RotateCharacter(Vector2 movement)
     {
         if (Mathf.Abs(movement.x) >= Mathf.Abs(movement.y))
         {
@@ -158,9 +202,20 @@ public class EnemyMoveFollow : MonoBehaviour
         {
             rb.transform.rotation = Quaternion.Euler(0, 0, movement.y > 0 ? 90 : -90);
         }
+        
+        if (!animator) return;
+
+        if (Mathf.Abs(movement.x) > Mathf.Abs(movement.y))
+        {
+            animator.SetInteger("Direction", movement.x > 0 ? 3 : 2);
+        }
+        else
+        {
+            animator.SetInteger("Direction", movement.y > 0 ? 1 : 0);
+        }
     }
 
-    Vector2 FindAlternativePath(Vector2 originalDirection)
+    private Vector2 FindAlternativePath(Vector2 originalDirection)
     {
         Vector2[] possibleDirections = {
             new Vector2(-originalDirection.y, originalDirection.x),
@@ -168,13 +223,11 @@ public class EnemyMoveFollow : MonoBehaviour
             -originalDirection
         };
 
-        foreach (Vector2 dir in possibleDirections)
+        foreach (var dir in possibleDirections)
         {
-            if (!Physics2D.Raycast(transform.position, dir, detectionRange, obstacleMask))
-            {
-                Debug.DrawRay(transform.position, dir * detectionRange, Color.green);
-                return dir;
-            }
+            if (Physics2D.Raycast(transform.position, dir, detectionRange, obstacleMask)) continue;
+            Debug.DrawRay(transform.position, dir * detectionRange, Color.green);
+            return dir;
         }
 
         return Vector2.zero;

@@ -11,16 +11,16 @@ public class WandMeteor : WeaponRanged
         mousePos.z = 0;
 
         GameObject fireball = Instantiate(projectilePrefab, mousePos, Quaternion.identity);
-        Player.Instance.Mana -= 15;
-        if (Player.Instance.Mana < 0)
+        Player.Player.Instance.Mana -= 15;
+        if (Player.Player.Instance.Mana < 0)
         {
-            Player.Instance.Mana = 0;
+            Player.Player.Instance.Mana = 0;
         }
 
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(fireball.transform.position, fireball.GetComponent<CircleCollider2D>().radius, LayerMask.GetMask("Enemy"));
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<Enemy>().RecieveDamage(weaponDamage + Player.Instance.AttackDamage);
+            enemy.GetComponent<Enemy>().RecieveDamage(weaponDamage + Player.Player.Instance.AttackDamage);
         }
 
         Destroy(fireball, 0.8f);

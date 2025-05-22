@@ -1,54 +1,54 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
-public class NPCInterractable : MonoBehaviour
+namespace NPC
 {
-    public string npcID;
-    public bool inRange = false;
-    public TextMeshProUGUI npcName;
-
-    public void Start()
+    // ReSharper disable once InconsistentNaming
+    public class NPCInterractable : MonoBehaviour
     {
-        npcName.text = npcID;
-    }
+        public string npcID;
+        public bool inRange;
+        public TextMeshProUGUI npcName;
 
-    private void Update()
-    {
-        if (inRange && Input.GetKeyDown(KeyCode.E))
+        public void Start()
         {
-            Interact();
+            npcName.text = npcID;
         }
-    }
 
-    public void Interact()
-    {
-        var quest = QuestManager.Instance.GetCurrentQuest();
-        if (quest == null) return;
-
-        var task = quest.GetTaskWithID(npcID);
-        if (task == null) return;
-
-        if (task.taskType == TaskType.TalkToNPC || task.taskType == TaskType.DeliverItem)
+        private void Update()
         {
-            QuestManager.Instance.CompleteTask(task.taskType, npcID);
+            if (inRange && Input.GetKeyDown(KeyCode.E))
+            {
+                Interact();
+            }
         }
-    }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        private void Interact()
         {
-            inRange = true;
+            var quest = QuestManager.Instance.GetCurrentQuest();
+
+            var task = quest?.GetTaskWithID(npcID);
+
+            if (task?.taskType is TaskType.TalkToNPC or TaskType.DeliverItem)
+            {
+                QuestManager.Instance.CompleteTask(task.taskType, npcID);
+            }
         }
-    }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            inRange = false;
+            if (other.CompareTag("Player"))
+            {
+                inRange = true;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                inRange = false;
+            }
         }
     }
 }

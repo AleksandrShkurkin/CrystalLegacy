@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CompanionAttack : MonoBehaviour
 {
-    private Companion companion;
+    private Companion.Companion companion;
     private Enemy enemy;
     private float attackCooldown = 1.0f;
     private float nextAttackTime;
 
     void Start()
     {
-        companion = GetComponentInParent<Companion>();
+        companion = GetComponentInParent<Companion.Companion>();
     }
 
     void Update()

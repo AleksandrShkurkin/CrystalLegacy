@@ -11,7 +11,7 @@ public class Enemy : LivingEntity
 
     public void Start()
     {
-        Level = UnityEngine.Random.Range(0, 5);
+        Level = Math.Clamp(UnityEngine.Random.Range(Player.Player.Instance.Level - 1, Player.Player.Instance.Level + 1), 0, 5);
         Health = 100 + (int)(100 * (Level / 10.0f));
         Defense = 1.0f + (Level / 10.0f);
         AttackDamage = 10 + (Level * 2);

@@ -6,7 +6,7 @@ using UnityEngine;
 public class StrengthPotion : Potion
 {
     private CooldownManager strengthCooldown = new CooldownManager(5.1f);
-    public override void UsePotion(Player player)
+    public override void UsePotion(Player.Player player)
     {
         if (amountStacked > 0 && strengthCooldown.IsCooldownFinished(Time.time))
         {
@@ -17,7 +17,7 @@ public class StrengthPotion : Potion
         }
     }
 
-    private IEnumerator ResetStrength(Player player)
+    private IEnumerator ResetStrength(Player.Player player)
     {
         yield return new WaitForSeconds(5f);
         player.AttackDamage -= potionEffectValue;

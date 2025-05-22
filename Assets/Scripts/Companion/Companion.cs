@@ -1,27 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Companion : LivingEntity
+namespace Companion
 {
-    private int previousLevel = -1;
-
-    void Start()
+    public class Companion : LivingEntity
     {
-        Level = 0;
-        Health = 0;
-        Defense = 0;
-    }
+        private int _previousLevel = -1;
 
-    void Update()
-    {
-        Level = Player.Instance.Level;
-        if (Level != previousLevel)
+        private void Awake()
         {
-            previousLevel = Level;
-            AttackDamage = 7 + (previousLevel * 2);
+            DontDestroyOnLoad(gameObject);
         }
-    }
 
-    public override void RecieveDamage(int damage) {}
+        private void Start()
+        {
+            Level = 0;
+            Health = 0;
+            Defense = 0;
+        }
+
+        private void Update()
+        {
+            Level = Player.Player.Instance.Level;
+            if (Level == _previousLevel) return;
+            _previousLevel = Level;
+            AttackDamage = 7 + (_previousLevel * 2);
+        }
+
+        public override void RecieveDamage(int damage) {}
+    }
 }

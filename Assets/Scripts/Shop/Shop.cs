@@ -75,9 +75,9 @@ public class Shop : MonoBehaviour
     public void ConfirmBuy()
     {
         string log = "Items bought: ";
-        if (Player.Instance.Money >= total)
+        if (Player.Player.Instance.Money >= total)
         {
-            Player.Instance.Money -= total;
+            Player.Player.Instance.Money -= total;
             foreach (ShopItem item in itemBasket)
             {
                 if (item.amount > 0)

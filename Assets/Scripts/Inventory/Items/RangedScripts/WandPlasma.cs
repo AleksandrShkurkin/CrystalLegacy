@@ -16,14 +16,14 @@ public class WandPlasma : WeaponRanged
 
         GameObject projectile = Instantiate(projectilePrefab,
         player.transform.position + (Vector3)direction * 0.5f, Quaternion.identity);
-        Player.Instance.Mana -= 5;
-        if (Player.Instance.Mana < 0)
+        Player.Player.Instance.Mana -= 5;
+        if (Player.Player.Instance.Mana < 0)
         {
-            Player.Instance.Mana = 0;
+            Player.Player.Instance.Mana = 0;
         }
 
         projectile.GetComponent<Rigidbody2D>().velocity = direction * projectileSpeed;
-        projectile.GetComponent<ProjectileDamage>().SetDamage(weaponDamage + Player.Instance.AttackDamage);
+        projectile.GetComponent<ProjectileDamage>().SetDamage(weaponDamage + Player.Player.Instance.AttackDamage);
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         projectile.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));

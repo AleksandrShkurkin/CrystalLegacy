@@ -12,26 +12,26 @@ public class PlayerAttack : MonoBehaviour
     private float cooldownTime = 0.5f;
     private float attackDuration = 0.1f;
 
-    void Start()
+    private void Start()
     {
         attackCooldown = new CooldownManager(cooldownTime + attackDuration);
         durationCooldown = new CooldownManager(attackDuration);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButtonDown("Fire1") && canAttack)
         {
-            if (Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetMeleeWeapon() != null)
+            if (Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetMeleeWeapon())
             {
                 Inventory.Instance.GetMeleeWeapon().Attack(this);
                 durationCooldown.InitiateCooldown(Time.time);
                 attackCooldown.InitiateCooldown(Time.time);
             }
-            else if (!Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetRangedWeapon() != null
-            && Player.Instance.Mana > 0)
+            else if (!Inventory.Instance.GetWeaponSelected() && Inventory.Instance.GetRangedWeapon()
+            && Player.Player.Instance.Mana > 0)
             {
-                Weapon weaponRanged = Inventory.Instance.GetRangedWeapon();
+                var weaponRanged = Inventory.Instance.GetRangedWeapon();
                 weaponRanged.Attack(this);
                 if (weaponRanged.GetType() == typeof(WandPlasma))
                     attackCooldown.InitiateCooldown(Time.time - attackDuration);
@@ -62,6 +62,6 @@ public class PlayerAttack : MonoBehaviour
     {
         canAttack = false;
         hitboxArea.SetActive(true);
-        hitboxArea.GetComponent<MeleeAttack>().SetDamage(meleeDamage + Player.Instance.AttackDamage + (Player.Instance.activeEffectType == EffectType.Damage ? (int)Player.Instance.activeEffectValue : 0));
+        hitboxArea.GetComponent<MeleeAttack>().SetDamage(meleeDamage + Player.Player.Instance.AttackDamage + (Player.Player.Instance.ActiveEffectType == EffectType.Damage ? (int)Player.Player.Instance.activeEffectValue : 0));
     }
 }

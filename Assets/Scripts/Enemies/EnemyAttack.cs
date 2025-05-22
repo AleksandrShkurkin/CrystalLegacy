@@ -5,25 +5,30 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     private Enemy enemy;
-    private bool playerInRange;
+    private Animator animator;
+    private EnemyMoveFollow enemyMove;
+    public bool playerInRange;
     private float attackCooldown = 1.0f;
     private float nextAttackTime;
 
-    void Start()
+    private void Start()
     {
         enemy = GetComponentInParent<Enemy>();
-    }
-
-    void Update()
-    {
-        if (playerInRange && Time.time >= nextAttackTime)
+        enemyMove = transform.parent.GetComponent<EnemyMoveFollow>();
+        if (enemyMove)
         {
-            nextAttackTime = Time.time + attackCooldown;
-            AttackPlayer();
+            animator = enemyMove.Animator;
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    private void Update()
+    {
+        if (!playerInRange || !(Time.time >= nextAttackTime)) return;
+        nextAttackTime = Time.time + attackCooldown;
+        AttackPlayer();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -31,7 +36,7 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -39,12 +44,20 @@ public class EnemyAttack : MonoBehaviour
         }
     }
 
-    void AttackPlayer()
+    private void AttackPlayer()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && player.CompareTag("Player"))
-        {
-            player.GetComponent<Player>().RecieveDamage(enemy.AttackDamage);
-        }
+        var player = GameObject.FindGameObjectWithTag("Player");
+        if (!player) return;
+        
+        Debug.Log("Attacking");
+        
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+            animator.SetInteger("Direction", direction.x > 0 ? 3 : 2);
+        else
+            animator.SetInteger("Direction", direction.y > 0 ? 1 : 0);
+
+        animator.SetTrigger("AttackTrigger");
+        player.GetComponent<Player.Player>().RecieveDamage(enemy.AttackDamage);
     }
 }

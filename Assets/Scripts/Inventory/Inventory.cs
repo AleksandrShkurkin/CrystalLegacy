@@ -7,8 +7,8 @@ using TMPro;
 public class Inventory : MonoBehaviour
 {
     public static Inventory Instance { get; private set; }
-    [SerializeField] private TextMeshProUGUI potionText;
-    [SerializeField] private TextMeshProUGUI weaponText;
+    public TextMeshProUGUI potionText;
+    public TextMeshProUGUI weaponText;
 
     public List<Weapon> weapons = new List<Weapon>();
     public List<Armor> armor = new List<Armor>();
@@ -123,11 +123,11 @@ public class Inventory : MonoBehaviour
         if (unlockedCompanions[currentCompanionIndex] != null)
         {
             currentCompanionObject = Instantiate(unlockedCompanions[currentCompanionIndex].companionPrefab, transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
-            Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
+            Player.Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
         }
         else
         {
-            Player.Instance.ResetCompanionEffect();
+            Player.Player.Instance.ResetCompanionEffect();
         }
     }
 
@@ -145,19 +145,20 @@ public class Inventory : MonoBehaviour
         if (unlockedCompanions[currentCompanionIndex] != null)
         {
             currentCompanionObject = Instantiate(unlockedCompanions[currentCompanionIndex].companionPrefab, transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle.normalized * 3f), Quaternion.identity);
-            Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
+            Player.Player.Instance.ApplyCompanionEffect(unlockedCompanions[currentCompanionIndex]);
         }
         else
         {
-            Player.Instance.ResetCompanionEffect();
+            Player.Player.Instance.ResetCompanionEffect();
         }
     }
 
     public void Awake()
     {
-        if (Instance == null)
+        if (!Instance)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -192,7 +193,7 @@ public class Inventory : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            currentPotion.UsePotion(Player.Instance);
+            currentPotion.UsePotion(Player.Player.Instance);
         }
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -309,7 +310,7 @@ public class Inventory : MonoBehaviour
             currentBoots = armor;
         }
         armor.SpecialEffect();
-        Player.Instance.Defense += armor.armorDefense;
+        Player.Player.Instance.Defense += armor.armorDefense;
     }
 
     public void UnequipArmor(Armor armor)
@@ -331,8 +332,8 @@ public class Inventory : MonoBehaviour
             currentBoots = null;
         }
         armor.SpecialEffectRemove();
-        Player.Instance.Defense -= armor.armorDefense;
-        Debug.Log("Defense: " + Player.Instance.Defense);
+        Player.Player.Instance.Defense -= armor.armorDefense;
+        Debug.Log("Defense: " + Player.Player.Instance.Defense);
     }
 
     public void EquipPotion(Potion potion)
