@@ -918,6 +918,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.77719194
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.740566
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground
@@ -13021,6 +13037,22 @@ PrefabInstance:
       value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1545894566, guid: c07e7a5eb6d2e2f48ae5c51375bf03d8, type: 3}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.g
+      value: 0.54509807
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5803922
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
@@ -13183,6 +13215,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.60351145
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5235849
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (4)
@@ -21841,6 +21889,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.740566
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7430803
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (5)
@@ -25426,6 +25490,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.78877556
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5801887
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (3)
@@ -26419,6 +26499,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.504717
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.96670604
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (2)
@@ -33958,6 +34054,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.6132076
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.6132076
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (6)
@@ -35422,6 +35534,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 336484738, guid: ac618fa53c001c545950a08f9727f08d, type: 3}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.6525454
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 993579581409591661, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.88765216
+      objectReference: {fileID: 0}
     - target: {fileID: 1933047298789356227, guid: 0276cfa1563c2844eb6e110624dda30d, type: 3}
       propertyPath: m_Name
       value: NPCBackground (1)
@@ -38098,6 +38226,22 @@ PrefabInstance:
     - target: {fileID: 1854948796136620898, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
       propertyPath: m_Name
       value: NPC (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1545894566, guid: c07e7a5eb6d2e2f48ae5c51375bf03d8, type: 3}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
+      propertyPath: m_Color.r
+      value: 0.05281806
       objectReference: {fileID: 0}
     - target: {fileID: 2454568047719921386, guid: 3f1b833ad6fe348469cb7bee68c5c041, type: 3}
       propertyPath: m_SortingOrder
